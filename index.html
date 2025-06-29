@@ -4,171 +4,53 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>古都古树古谭</title>
-  <style>
-    :root {
-      /* 设计稿主色调、字体等token变量 */
-      --primary: #2BAE17;
-      --bg: #F9FAFB;
-      --text-main: #1F2937;
-      --text-sub: #4B5563;
-      --card-bg: #fff;
-      --border-radius: 12px;
-      --shadow: 0 1px 2px 0 rgba(0,0,0,0.05);
-      --font-main: 'Roboto', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-    }
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: var(--bg);
-      font-family: var(--font-main);
-      color: var(--text-main);
-      min-height: 100vh;
-    }
-    body {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-    .container {
-      max-width: 480px;
-      margin: 0 auto;
-      background: var(--bg);
-      min-height: 100vh;
-      box-shadow: 0 0 0 1px #eee;
-      display: flex;
-      flex-direction: column;
-    }
-    header {
-      background: var(--primary);
-      color: #fff;
-      padding: 12px 0;
-      text-align: center;
-      font-size: 20px;
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
-    main {
-      flex: 1;
-      padding: 16px;
-    }
-    .card {
-      background: var(--card-bg);
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow);
-      margin-bottom: 16px;
-      padding: 16px;
-    }
-    .nav-bar {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      background: #fff;
-      border-top: 1px solid #eee;
-      height: 56px;
-      position: sticky;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: 10;
-    }
-    .nav-bar a {
-      color: var(--text-sub);
-      text-decoration: none;
-      font-size: 14px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    @media (min-width: 768px) {
-      .container {
-        max-width: 700px;
-      }
-      main {
-        padding: 32px;
-      }
-    }
-    nav#dropdown-menu {
-      display: none;
-      opacity: 0;
-      max-height: 0;
-      transition: max-height 0.35s cubic-bezier(.4,0,.2,1), opacity 0.25s cubic-bezier(.4,0,.2,1);
-      overflow: hidden;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-    nav#dropdown-menu.active {
-      display: flex !important;
-      opacity: 1;
-      max-height: 1200px;
-      overflow: visible;
-    }
-    nav#dropdown-menu a[dropdown-link] {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 16px 0;
-      color: #1F2937;
-      font-size: 16px;
-      gap: 16px;
-      width: 320px;
-      max-width: 90%;
-      margin: 0 auto;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: background 0.18s;
-    }
-    nav#dropdown-menu a[dropdown-link]:hover {
-      background: #F0FDF4;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header style="background: var(--primary);color: #fff;padding: 12px 0;text-align: center;font-size: 20px;font-weight: bold;letter-spacing: 2px;width:100vw;position:fixed;left:50%;transform:translateX(-50%);margin:0;top:0;z-index:10001;">
-    <div id="menu-btn" style="position:absolute;left:16px;top:50%;transform:translateY(-50%);width:32px;height:32px;display:flex;align-items:center;justify-content:center;z-index:2;cursor:pointer;">
-        <div id="menu-icon" style="width:32px;height:32px;display:flex;flex-direction:column;justify-content:space-between;position:relative;z-index:10002;">
-        <span class="bar" style="display:block;height:4px;width:100%;background:#fff;border-radius:4px;transition:all 0.35s cubic-bezier(.4,0,.2,1);margin:0 0 6px 0;box-shadow:0 1px 4px rgba(0,0,0,0.12);"></span>
-        <span class="bar" style="display:block;height:4px;width:100%;background:#fff;border-radius:4px;transition:all 0.35s cubic-bezier(.4,0,.2,1);box-shadow:0 1px 4px rgba(0,0,0,0.12);"></span>
-        <span class="bar" style="display:block;height:4px;width:100%;background:#fff;border-radius:4px;transition:all 0.35s cubic-bezier(.4,0,.2,1);margin:6px 0 0 0;box-shadow:0 1px 4px rgba(0,0,0,0.12);"></span>
+  <header class="header-fixed">
+    <div id="menu-btn" class="menu-btn-fixed">
+        <div id="menu-icon" class="menu-icon">
+        <span class="bar margin-bottom"></span>
+        <span class="bar"></span>
+        <span class="bar margin-top"></span>
       </div>
     </div>
     古都古树古谭
-    <div id="menu-mask" style="display:none;position:fixed;z-index:9998;left:0;top:50px;width:100vw;height:calc(100vh - 30px);background:rgba(0,0,0,0.2);backdrop-filter:blur(4px);"></div>
-    <nav id="dropdown-menu" style="display:none;position:fixed;z-index:9999;left:50%;top:51px;transform:translateX(-50%);width:90vw;max-width:520px;background:rgba(255,255,255,0.96);box-shadow:0 8px 24px rgba(0,0,0,0.12);border-radius:0 0 16px 16px;backdrop-filter:blur(8px);padding:0 0 16px 0;overflow:auto;display:flex;flex-direction:column;align-items:center;">
+    <div id="menu-mask" class="menu-mask"></div>
+    <nav id="dropdown-menu" class="fixed">
       <div style="display:flex;align-items:center;padding:16px 0 0 0;">
-        <img src="images/icon.png" alt="icon" style="width:48px;height:48px;object-fit:contain;display:block;margin-right:12px;">
+        <img src="images/icon.png" alt="icon" class="icon-img-40">
         <div style="flex:1;min-width:0;">
-          <div style="color:#1F2937;font-size:17px;font-weight:500;line-height:1.5;">每一棵古树名木都是隐于京师的见证者</div>
+          <div style="color:#1F2937;font-size:15px;font-weight:500;line-height:1.5;">每一棵古树名木都是隐于京师的见证者</div>
           <div style="color:#6B7280;font-size:14px;line-height:1.5;margin-top:0;">事往凭谁问，无恙是朱颜。</div>
         </div>
       </div>
-      <a href="#home" dropdown-link>
-        <img src="images/icon_01.png" alt="首页" style="width:24px;height:24px;object-fit:contain;display:block;">
-        <span>首 页</span>
+      <a href="#home" dropdown-link class="home-link">
+        <span class="icon-wrap"><img src="images/icon_01.png" alt="首页" style="width:24px;height:24px;object-fit:contain;display:block;"></span>
+        <span> 首   页 </span>
       </a>
       <a href="#special" dropdown-link>
-        <img src="images/icon_02.png" alt="古树专题" style="width:24px;height:24px;object-fit:contain;display:block;">
+        <span class="icon-wrap"><img src="images/icon_02.png" alt="古树专题" style="width:24px;height:24px;object-fit:contain;display:block;"></span>
         <span>古树专题</span>
       </a>
       <a href="#tour" dropdown-link>
-        <img src="images/icon_03.png" alt="游览推荐" style="width:24px;height:24px;object-fit:contain;display:block;">
+        <span class="icon-wrap"><img src="images/icon_03.png" alt="游览推荐" style="width:24px;height:24px;object-fit:contain;display:block;"></span>
         <span>游览推荐</span>
       </a>
       <a href="#wallpaper" dropdown-link>
-        <img src="images/icon_04.png" alt="精美壁纸" style="width:24px;height:24px;object-fit:contain;display:block;">
+        <span class="icon-wrap"><img src="images/icon_04.png" alt="精美壁纸" style="width:24px;height:24px;object-fit:contain;display:block;"></span>
         <span>精美壁纸</span>
       </a>
       <a href="#protect" dropdown-link>
-        <img src="images/icon_05.png" alt="古树保护" style="width:24px;height:24px;object-fit:contain;display:block;">
+        <span class="icon-wrap"><img src="images/icon_05.png" alt="古树保护" style="width:24px;height:24px;object-fit:contain;display:block;"></span>
         <span>古树保护</span>
       </a>
       <a href="#collect" dropdown-link>
-        <img src="images/icon_06.png" alt="古树收藏" style="width:24px;height:24px;object-fit:contain;display:block;">
+        <span class="icon-wrap"><img src="images/icon_06.png" alt="古树收藏" style="width:24px;height:24px;object-fit:contain;display:block;"></span>
         <span>古树收藏</span>
       </a>
       <a href="#donate" dropdown-link>
-        <img src="images/icon_07.png" alt="认养募捐" style="width:24px;height:24px;object-fit:contain;display:block;">
+        <span class="icon-wrap"><img src="images/icon_07.png" alt="认养募捐" style="width:24px;height:24px;object-fit:contain;display:block;"></span>
         <span>认养募捐</span>
       </a>
     </nav>
@@ -176,23 +58,23 @@
   <div class="container" style="padding-top:56px;">
     <main>
       <!-- 首页内容区块 -->
-      <div class="card" style="background:#EAF2E9;border-radius:12px;position:relative;">
-        <h2 style="margin:0 0 8px 0;font-size:18px;">古都古树总览</h2>
-        <div id="intro-text" style="transition:max-height 0.6s cubic-bezier(.4,0,.2,1);overflow:hidden;max-height:320px;">
-          <p style="color:var(--text-sub);margin:0;line-height:1.7;text-indent:2em;">古都北京,有3000多年的建城史、800多年的建都史,是中国古迹最为密集的区域所在,同时也是"活文物"古树最为集中的地方，甚至还是世界上古树最多的城市。</p>
-          <p style="color:var(--text-sub);margin:0;line-height:1.7;text-indent:2em;">古树是活文物，有着重要的生态、景观、科研价值，反映着所在地的历史文化底蕴及文明程度。北京市的古树资源丰富且独特，它们不仅为这座城市增添了无尽的生机与绿意，更是城市历史与文化的重要载体，见证着北京的变迁与发展，传递着古都的韵味，凝聚着岁月的痕迹和人文的情怀。<span id="intro-ellipsis">...</span></p>
-          <div id="intro-more" style="display:none;">
-            <p style="color:var(--text-sub);margin:0;line-height:1.7;text-indent:2em;">一般来说，树龄在百年以上的大树即为古树，生长百年以上的古树已进入缓慢生长阶段，干径增粗极慢，形态上给人以饱经风霜、苍劲古拙之感。</p>
-            <p style="color:var(--text-sub);margin:0;line-height:1.7;text-indent:2em;">2015-2021年，全国绿化委员会在全国范围内组织开展了第二次古树名木资源普查，结果显示全国普查范围内的古树名木共计508.19万株。</p>
-            <p style="color:var(--text-sub);margin:0;line-height:1.7;text-indent:2em;">北京市将古树分为一级和二级。树龄在 300 年以上的树木为一级古树；树龄在 100 年以上 300 年以下的树木为二级古树。在古树树干上，我们常常会看到挂着不同颜色的树牌，这些树牌上记载着古树的编号、科属、学名、年代等信息。2017年北京市园林绿化局统一规制定做了树牌，红色树牌代表一级古树，绿色树牌则代表二级古树。每株古树都制定了具有唯一性的编号与二维码，方便人们认识古树、了解古树，更好地保护古树。</p>
-            <p style="color:var(--text-sub);margin:0;line-height:1.7;text-indent:2em;">据北京市古树名木资源调查数据显示，全市拥有古树名木41865 株，其中一级古树6198 株，占总数的15%；二级古树34329株，占总数的82%；名木1338 株，占总数的3%。</p>
-            <p style="color:var(--text-sub);margin:0;line-height:1.7;text-indent:2em;">北京的古树名木树种丰富多样，共有33 科56 属74 种，主要树种为侧柏22570株、油松6990株、桧柏5753株和国槐3531株，共计38844株，占总数的92.8%，其他树种3021株，占总数的7.2%。</p>
-            <p style="color:var(--text-sub);margin:0;line-height:1.7;text-indent:2em;">全市古树名木总体呈现"一核、一区、四片、多点"的保护格局。其中："一核"：指首都功能核心区，"一区"：指三山五园及周边片区，"四片"：指昌平区十三陵、房山区上方山、怀柔区红螺寺、密云区白龙潭，"多点"：指散落于全市各区零散分布的古树名木；</p>
-            <p style="color:var(--text-sub);margin:0;line-height:1.7;text-indent:2em;">北京市古树资源分布按行政区分布，海淀区共有15065株，占比为36.0%，东城区有6754株，占比为16.1%，昌平区共有5981株，占比为14.4%，其他还有西城区3307株、怀柔区3106株、房山区1679株、门头沟区1675株、石景山区1545株、密云区1206株、朝阳区591株、丰台区230株、延庆区173株、通州区150株、大兴区127株、平谷区63株、顺义区61株。</p>
+      <div class="card card-bg">
+        <h2 class="h2-margin">古都古树总览</h2>
+        <div id="intro-text" class="intro-text">
+          <p class="text-sub">古都北京,有3000多年的建城史、800多年的建都史,是中国古迹最为密集的区域所在,同时也是"活文物"古树最为集中的地方，甚至还是世界上古树最多的城市。</p>
+          <p class="text-sub">古树是活文物，有着重要的生态、景观、科研价值，反映着所在地的历史文化底蕴及文明程度。北京市的古树资源丰富且独特，它们不仅为这座城市增添了无尽的生机与绿意，更是城市历史与文化的重要载体，见证着北京的变迁与发展，传递着古都的韵味，凝聚着岁月的痕迹和人文的情怀。<span id="intro-ellipsis">...</span></p>
+          <div id="intro-more" class="intro-more">
+            <p class="text-sub">一般来说，树龄在百年以上的大树即为古树，生长百年以上的古树已进入缓慢生长阶段，干径增粗极慢，形态上给人以饱经风霜、苍劲古拙之感。</p>
+            <p class="text-sub">2015-2021年，全国绿化委员会在全国范围内组织开展了第二次古树名木资源普查，结果显示全国普查范围内的古树名木共计508.19万株。</p>
+            <p class="text-sub">北京市将古树分为一级和二级。树龄在 300 年以上的树木为一级古树；树龄在 100 年以上 300 年以下的树木为二级古树。在古树树干上，我们常常会看到挂着不同颜色的树牌，这些树牌上记载着古树的编号、科属、学名、年代等信息。2017年北京市园林绿化局统一规制定做了树牌，红色树牌代表一级古树，绿色树牌则代表二级古树。每株古树都制定了具有唯一性的编号与二维码，方便人们认识古树、了解古树，更好地保护古树。</p>
+            <p class="text-sub">据北京市古树名木资源调查数据显示，全市拥有古树名木41865 株，其中一级古树6198 株，占总数的15%；二级古树34329株，占总数的82%；名木1338 株，占总数的3%。</p>
+            <p class="text-sub">北京的古树名木树种丰富多样，共有33 科56 属74 种，主要树种为侧柏22570株、油松6990株、桧柏5753株和国槐3531株，共计38844株，占总数的92.8%，其他树种3021株，占总数的7.2%。</p>
+            <p class="text-sub">全市古树名木总体呈现"一核、一区、四片、多点"的保护格局。其中："一核"：指首都功能核心区，"一区"：指三山五园及周边片区，"四片"：指昌平区十三陵、房山区上方山、怀柔区红螺寺、密云区白龙潭，"多点"：指散落于全市各区零散分布的古树名木；</p>
+            <p class="text-sub">北京市古树资源分布按行政区分布，海淀区共有15065株，占比为36.0%，东城区有6754株，占比为16.1%，昌平区共有5981株，占比为14.4%，其他还有西城区3307株、怀柔区3106株、房山区1679株、门头沟区1675株、石景山区1545株、密云区1206株、朝阳区591株、丰台区230株、延庆区173株、通州区150株、大兴区127株、平谷区63株、顺义区61株。</p>
           </div>
         </div>
         <div style="text-align:center;margin-top:8px;">
-          <button id="expand-btn" style="background:transparent;color:var(--primary);border:none;border-radius:8px;padding:6px 20px;font-size:14px;box-shadow:0 1px 2px 0 rgba(0,0,0,0.05);cursor:pointer;display:inline-flex;align-items:center;gap:8px;">
+          <button id="expand-btn" class="expand-btn">
             展开全文
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
               <polyline points="4,6 8,10 12,6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
@@ -202,40 +84,40 @@
       </div>
       <div class="card">
         <h3 style="margin:0 0 8px 0;">古树分布</h3>
-        <img src="https://image-resource.mastergo.com/161763590109552/161763590109555/3864bd9851b0dfdde8e991910da5922f.png" alt="古树分布图" style="width:100%;border-radius:8px;">
-        <div style="display:flex;gap:8px;margin-top:8px;">
-          <span style="background:#F0F0F0;border-radius:4px;padding:2px 8px;font-size:12px;">&lt;1000株</span>
-          <span style="background:#D4B675;border-radius:4px;padding:2px 8px;font-size:12px;">1000-2000株</span>
-          <span style="background:#B36D00;border-radius:4px;padding:2px 8px;font-size:12px;">2000-10000株</span>
+        <img src="https://image-resource.mastergo.com/161763590109552/161763590109555/3864bd9851b0dfdde8e991910da5922f.png" alt="古树分布图" class="img-radius-8">
+        <div class="flex-gap-8">
+          <span class="tag-gray">&lt;1000株</span>
+          <span class="tag-gold">1000-2000株</span>
+          <span class="tag-brown">2000-10000株</span>
         </div>
       </div>
-      <div class="card" style="display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;">
-        <a href="#special" style="flex:1 1 45%;text-align:center;text-decoration:none;color:inherit;">
-          <img src="https://image-resource.mastergo.com/161763590109552/161763590109555/effb72f41384bf3a21b2d4d6c4039eeb.png" alt="古树专题" style="width:55px;height:55px;border-radius:8px;">
+      <div class="card card-flex">
+        <a href="#special" class="card-link">
+          <img src="https://image-resource.mastergo.com/161763590109552/161763590109555/effb72f41384bf3a21b2d4d6c4039eeb.png" alt="古树专题" class="img-radius-8-2">
           <div style="margin-top:8px;font-weight:bold;">古树专题</div>
           <div style="color:var(--text-sub);font-size:12px;">探寻古树故事</div>
         </a>
-        <a href="#tour" style="flex:1 1 45%;text-align:center;text-decoration:none;color:inherit;">
-          <img src="https://image-resource.mastergo.com/161763590109552/161763590109555/c9379688c2fef3b9a5fe77d2dd34b5d9.png" alt="游览推荐" style="width:69px;height:69px;border-radius:8px;">
+        <a href="#tour" class="card-link">
+          <img src="https://image-resource.mastergo.com/161763590109552/161763590109555/c9379688c2fef3b9a5fe77d2dd34b5d9.png" alt="游览推荐" class="img-radius-8-3">
           <div style="margin-top:8px;font-weight:bold;">游览推荐</div>
           <div style="color:var(--text-sub);font-size:12px;">古树探秘之旅</div>
         </a>
-        <a href="#protect" style="flex:1 1 45%;text-align:center;text-decoration:none;color:inherit;">
-          <img src="https://image-resource.mastergo.com/161763590109552/161763590109555/abc81c49634b1f0b68b4258ad9911bbd.png" alt="古树保护" style="width:57px;height:58px;border-radius:8px;">
+        <a href="#protect" class="card-link">
+          <img src="https://image-resource.mastergo.com/161763590109552/161763590109555/abc81c49634b1f0b68b4258ad9911bbd.png" alt="古树保护" class="img-radius-8-4">
           <div style="margin-top:8px;font-weight:bold;">古树保护</div>
           <div style="color:var(--text-sub);font-size:12px;">保护政策与技术</div>
         </a>
-        <a href="#donate" style="flex:1 1 45%;text-align:center;text-decoration:none;color:inherit;">
-          <img src="https://image-resource.mastergo.com/161763590109552/161763590109555/12cd52dd6dfe6066273ac36d502fd950.png" alt="认养募捐" style="width:91px;height:90px;border-radius:8px;">
+        <a href="#donate" class="card-link">
+          <img src="https://image-resource.mastergo.com/161763590109552/161763590109555/12cd52dd6dfe6066273ac36d502fd950.png" alt="认养募捐" class="img-radius-8-5">
           <div style="margin-top:8px;font-weight:bold;">认养募捐</div>
           <div style="color:var(--text-sub);font-size:12px;">参与古树保护</div>
         </a>
       </div>
     </main>
-    <footer style="text-align:center;color:#9CA3AF;font-size:10px;padding:16px 0;">© 2025 版权所有 - ICP备案号：京ICP备XXXXXXXX号</footer>
+    <footer class="footer">© 2025 版权所有 - ICP备案号：京ICP备XXXXXXXX号</footer>
   </div>
-  <audio id="bgm" src="sound/千年古树下.mp3" loop autoplay style="display:none;"></audio>
-  <div id="music-control" style="position:fixed;right:20px;bottom:28px;z-index:12000;width:48px;height:48px;background:rgba(255,255,255,0.92);box-shadow:0 2px 8px rgba(0,0,0,0.10);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;">
+  <audio id="bgm" src="sound/千年古树下.mp3" loop autoplay class="bgm-hide"></audio>
+  <div id="music-control" class="music-control">
     <svg id="pause-icon" width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="6" y="6" width="4" height="16" rx="2" fill="#2BAE17"/><rect x="18" y="6" width="4" height="16" rx="2" fill="#2BAE17"/></svg>
     <svg id="play-icon" width="28" height="28" viewBox="0 0 28 28" fill="none" style="display:none;"><polygon points="8,6 22,14 8,22" fill="#2BAE17"/></svg>
   </div>
@@ -264,7 +146,6 @@
       dropdownMenu.classList.add('active');
       menuMask.style.display = 'block';
       document.body.style.overflow = 'hidden';
-      // 汉堡变叉（更清晰）
       bars[0].style.transform = 'translateY(14px) rotate(45deg)';
       bars[0].style.setProperty('background-color', '#2BAE17', 'important');
       bars[0].style.height = '6px';
@@ -280,7 +161,6 @@
       dropdownMenu.classList.remove('active');
       menuMask.style.display = 'none';
       document.body.style.overflow = '';
-      // 叉变汉堡
       bars[0].style.transform = '';
       bars[0].style.setProperty('background-color', '#fff', 'important');
       bars[0].style.height = '4px';
@@ -302,9 +182,6 @@
     };
     menuMask.onclick = function(e) { e.stopPropagation(); closeMenu(); };
     dropdownMenu.onclick = function(e) { e.stopPropagation(); };
-    document.body.addEventListener('click', function() {
-      if (menuOpen) closeMenu();
-    });
     // 音乐控制
     const bgm = document.getElementById('bgm');
     const musicControl = document.getElementById('music-control');
