@@ -5,6 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>北京的十大树王</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .container,
+    .card,
+    .zhuanti-wide-card {
+      width: 100%;
+      max-width: 100vw;
+      box-sizing: border-box;
+    }
+    .tree-king-list,
+    .tree-king-ul,
+    .tree-king-item,
+    .tree-king-summary,
+    .tree-king-full {
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+      overflow-x: auto;
+    }
+    .tree-king-full {
+      word-break: break-all;
+      overflow-x: auto;
+    }
+    .image-slider {
+      max-width: 100%;
+      overflow-x: auto;
+    }
+    .image-slider img {
+      max-width: 90vw;
+      height: auto;
+      display: inline-block;
+    }
+    #img-modal-mask {
+      display: none;
+      position: fixed;
+      z-index: 20000;
+      left: 0; top: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.7);
+      align-items: center;
+      justify-content: center;
+    }
+    #img-modal-mask img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+      background: #fff;
+    }
+  </style>
 </head>
 <body>
   <header class="header-fixed">
@@ -86,8 +135,8 @@
               <p style="text-indent:2em;">侧柏生长缓慢，生长期长。侧柏为北京市两种市树之一，也是北京地区数量最多的古树，多达22570株，占全北京古树的55.7%。全国树龄5000年以上的古树一共有5株，全部为侧柏。</p>
               <p style="text-indent:2em;">北京地区著名的侧柏古树还有：中山公园辽柏、劳动人民文化宫神柏、密云范公柏、上方山柏树王等。</p>
               <div class="image-slider" style="overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;margin-top:8px;">
-                <img src="images/miyun_01.jpg" alt="密云古树1" class="enlargeable-img" style="height:200px;width:auto;max-width:90vw;display:inline-block;margin-right:12px;border-radius:8px;vertical-align:middle;object-fit:cover;cursor:pointer;">
-                <img src="images/miyun_02.jpg" alt="密云古树2" class="enlargeable-img" style="height:200px;width:auto;max-width:90vw;display:inline-block;border-radius:8px;vertical-align:middle;object-fit:cover;cursor:pointer;">
+                <img src="images/miyun_01.jpg" alt="密云古树1" class="enlargeable-img" style="height:200px;width:auto;max-width:320px;display:inline-block;margin-right:12px;border-radius:8px;vertical-align:middle;object-fit:cover;cursor:pointer;">
+                <img src="images/miyun_02.jpg" alt="密云古树2" class="enlargeable-img" style="height:200px;width:auto;max-width:320px;display:inline-block;border-radius:8px;vertical-align:middle;object-fit:cover;cursor:pointer;">
               </div>
               <div style="text-align:center;color:#888;font-size:13px;margin:6px 0 0 0;">点击图片可放大</div>
             </div>
@@ -193,45 +242,47 @@
     dropdownMenu.onclick = function(e) { e.stopPropagation(); };
     // 音乐控制
     const bgm = document.getElementById('bgm');
-    const musicControl = document.getElementById('music-control');
-    const pauseIcon = document.getElementById('pause-icon');
-    const playIcon = document.getElementById('play-icon');
-    let isPlaying = true;
-    // 兼容自动播放策略
-    function tryPlay() {
-      bgm.muted = false;
-      bgm.play().catch(()=>{});
-    }
-    window.addEventListener('load', tryPlay);
-    document.addEventListener('DOMContentLoaded', tryPlay);
-    document.body.addEventListener('pointerdown', tryPlay, { once: true });
-    document.body.addEventListener('touchstart', tryPlay, { once: true });
-    document.body.addEventListener('click', tryPlay, { once: true });
-    musicControl.onclick = function(e) {
-      e.stopPropagation();
-      if (isPlaying) {
-        bgm.pause();
+    if (bgm) {
+      const musicControl = document.getElementById('music-control');
+      const pauseIcon = document.getElementById('pause-icon');
+      const playIcon = document.getElementById('play-icon');
+      let isPlaying = true;
+      // 兼容自动播放策略
+      function tryPlay() {
+        bgm.muted = false;
+        bgm.play().catch(()=>{});
+      }
+      window.addEventListener('load', tryPlay);
+      document.addEventListener('DOMContentLoaded', tryPlay);
+      document.body.addEventListener('pointerdown', tryPlay, { once: true });
+      document.body.addEventListener('touchstart', tryPlay, { once: true });
+      document.body.addEventListener('click', tryPlay, { once: true });
+      musicControl.onclick = function(e) {
+        e.stopPropagation();
+        if (isPlaying) {
+          bgm.pause();
+          pauseIcon.style.display = 'none';
+          playIcon.style.display = '';
+          isPlaying = false;
+        } else {
+          bgm.play();
+          pauseIcon.style.display = '';
+          playIcon.style.display = 'none';
+          isPlaying = true;
+        }
+      };
+      // 若音乐被用户/系统暂停，自动切换图标
+      bgm.addEventListener('pause', ()=>{
         pauseIcon.style.display = 'none';
         playIcon.style.display = '';
         isPlaying = false;
-      } else {
-        bgm.play();
+      });
+      bgm.addEventListener('play', ()=>{
         pauseIcon.style.display = '';
         playIcon.style.display = 'none';
         isPlaying = true;
-      }
-    };
-    // 若音乐被用户/系统暂停，自动切换图标
-    bgm.addEventListener('pause', ()=>{
-      pauseIcon.style.display = 'none';
-      playIcon.style.display = '';
-      isPlaying = false;
-    });
-    bgm.addEventListener('play', ()=>{
-      pauseIcon.style.display = '';
-      playIcon.style.display = 'none';
-      isPlaying = true;
-    });
+      });
+    }
     function toggleTreeKing(el) {
       var full = el.nextElementSibling;
       if (full.style.display === 'block') {
