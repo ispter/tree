@@ -59,8 +59,9 @@
     <main>
       <div class="card card-bg zhuanti-wide-card">
         <div id="intro-text" class="intro-text">
-          <p class="text-sub">2018年，为弘扬和传承古树名木历史文化，增强公众生态文明意识，讲好北京古树名木的故事，让古树名木"活起来"，北京市园林绿化局开展了寻找北京"最美十大树王"活动，针对侧柏、油松、国槐、银杏、榆树、酸枣、白皮松、桧柏、海棠、玉兰10种北京市常见古树开展评选，每个树种推选出一株最美古树，作为"最美树王"。经过专家推选、市民投票等环节，最终天坛公园九龙柏等10株古树从69株候选古树中脱颖而出，荣获北京"最美十大树王"称号。</p>
-          <div id="intro-more" class="intro-more"></div>
+          <p class="text-sub">
+            2018年，为弘扬和传承古树名木历史文化，增强公众生态文明意识，讲好北京古树名木的故事，让古树名木"活起来"，北京市园林绿化局开展了寻找北京"最美十大树王"活动，针对侧柏、油松、国槐、银杏、榆树、酸枣、白皮松、桧柏、海棠、玉兰10种北京市常见古树开展评选，每个树种推选出一株最美古树，作为"最美树王"。经过专家推选<span id="intro-ellipsis">……</span><span id="intro-rest" style="display:none;">、市民投票等环节，最终天坛公园九龙柏等10株古树从69株候选古树中脱颖而出，荣获北京"最美十大树王"称号。</span>
+          </p>
         </div>
         <div style="text-align:center;margin-top:8px;">
           <button id="expand-btn" class="expand-btn">
@@ -85,8 +86,8 @@
               <p style="text-indent:2em;">侧柏生长缓慢，生长期长。侧柏为北京市两种市树之一，也是北京地区数量最多的古树，多达22570株，占全北京古树的55.7%。全国树龄5000年以上的古树一共有5株，全部为侧柏。</p>
               <p style="text-indent:2em;">北京地区著名的侧柏古树还有：中山公园辽柏、劳动人民文化宫神柏、密云范公柏、上方山柏树王等。</p>
               <div class="image-slider" style="overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;margin-top:8px;">
-                <img src="images/miyun_01.jpg" alt="密云古树1" class="enlargeable-img" style="height:200px;width:auto;max-width:320px;display:inline-block;margin-right:12px;border-radius:8px;vertical-align:middle;object-fit:cover;cursor:pointer;">
-                <img src="images/miyun_02.jpg" alt="密云古树2" class="enlargeable-img" style="height:200px;width:auto;max-width:320px;display:inline-block;border-radius:8px;vertical-align:middle;object-fit:cover;cursor:pointer;">
+                <img src="images/miyun_01.jpg" alt="密云古树1" class="enlargeable-img" style="height:200px;width:auto;max-width:90vw;display:inline-block;margin-right:12px;border-radius:8px;vertical-align:middle;object-fit:cover;cursor:pointer;">
+                <img src="images/miyun_02.jpg" alt="密云古树2" class="enlargeable-img" style="height:200px;width:auto;max-width:90vw;display:inline-block;border-radius:8px;vertical-align:middle;object-fit:cover;cursor:pointer;">
               </div>
               <div style="text-align:center;color:#888;font-size:13px;margin:6px 0 0 0;">点击图片可放大</div>
             </div>
@@ -139,15 +140,9 @@
   </div>
   <script>
     document.getElementById('expand-btn').onclick = function() {
-      var introText = document.getElementById('intro-text');
-      var introMore = document.getElementById('intro-more');
-      var expandBtn = document.getElementById('expand-btn');
-      introMore.style.display = 'block';
-      introText.style.maxHeight = '2000px';
-      expandBtn.style.display = 'none';
-      setTimeout(function(){
-        introText.scrollIntoView({behavior:'smooth',block:'end'});
-      }, 400);
+      document.getElementById('intro-ellipsis').style.display = 'none';
+      document.getElementById('intro-rest').style.display = 'inline';
+      this.style.display = 'none';
     };
     // 汉堡菜单交互
     const menuBtn = document.getElementById('menu-btn');
