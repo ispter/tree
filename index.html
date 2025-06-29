@@ -87,20 +87,93 @@
         padding: 32px;
       }
     }
+    nav#dropdown-menu {
+      display: none;
+      opacity: 0;
+      max-height: 0;
+      transition: max-height 0.35s cubic-bezier(.4,0,.2,1), opacity 0.25s cubic-bezier(.4,0,.2,1);
+      overflow: hidden;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    nav#dropdown-menu.active {
+      display: flex !important;
+      opacity: 1;
+      max-height: 1200px;
+      overflow: visible;
+    }
+    nav#dropdown-menu a[dropdown-link] {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 16px 0;
+      color: #1F2937;
+      font-size: 16px;
+      gap: 16px;
+      width: 320px;
+      max-width: 90%;
+      margin: 0 auto;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.18s;
+    }
+    nav#dropdown-menu a[dropdown-link]:hover {
+      background: #F0FDF4;
+    }
   </style>
 </head>
 <body>
-  <header style="background: var(--primary);color: #fff;padding: 12px 0;text-align: center;font-size: 20px;font-weight: bold;letter-spacing: 2px;width:100vw;position:relative;left:50%;transform:translateX(-50%);margin:0;">
-    <div style="position:absolute;left:16px;top:50%;transform:translateY(-50%);width:32px;height:32px;display:flex;align-items:center;justify-content:center;z-index:2;">
-      <div style="width:24px;height:24px;display:flex;flex-direction:column;justify-content:space-between;">
-        <span style="display:block;height:3px;width:100%;background:#fff;border-radius:2px;"></span>
-        <span style="display:block;height:3px;width:100%;background:#fff;border-radius:2px;"></span>
-        <span style="display:block;height:3px;width:100%;background:#fff;border-radius:2px;"></span>
+  <header style="background: var(--primary);color: #fff;padding: 12px 0;text-align: center;font-size: 20px;font-weight: bold;letter-spacing: 2px;width:100vw;position:fixed;left:50%;transform:translateX(-50%);margin:0;top:0;z-index:10001;">
+    <div id="menu-btn" style="position:absolute;left:16px;top:50%;transform:translateY(-50%);width:32px;height:32px;display:flex;align-items:center;justify-content:center;z-index:2;cursor:pointer;">
+        <div id="menu-icon" style="width:32px;height:32px;display:flex;flex-direction:column;justify-content:space-between;position:relative;z-index:10002;">
+        <span class="bar" style="display:block;height:4px;width:100%;background:#fff;border-radius:4px;transition:all 0.35s cubic-bezier(.4,0,.2,1);margin:0 0 6px 0;box-shadow:0 1px 4px rgba(0,0,0,0.12);"></span>
+        <span class="bar" style="display:block;height:4px;width:100%;background:#fff;border-radius:4px;transition:all 0.35s cubic-bezier(.4,0,.2,1);box-shadow:0 1px 4px rgba(0,0,0,0.12);"></span>
+        <span class="bar" style="display:block;height:4px;width:100%;background:#fff;border-radius:4px;transition:all 0.35s cubic-bezier(.4,0,.2,1);margin:6px 0 0 0;box-shadow:0 1px 4px rgba(0,0,0,0.12);"></span>
       </div>
     </div>
     古都古树古谭
+    <div id="menu-mask" style="display:none;position:fixed;z-index:9998;left:0;top:50px;width:100vw;height:calc(100vh - 30px);background:rgba(0,0,0,0.2);backdrop-filter:blur(4px);"></div>
+    <nav id="dropdown-menu" style="display:none;position:fixed;z-index:9999;left:50%;top:51px;transform:translateX(-50%);width:90vw;max-width:520px;background:rgba(255,255,255,0.96);box-shadow:0 8px 24px rgba(0,0,0,0.12);border-radius:0 0 16px 16px;backdrop-filter:blur(8px);padding:0 0 16px 0;overflow:auto;display:flex;flex-direction:column;align-items:center;">
+      <div style="display:flex;align-items:center;padding:16px 0 0 0;">
+        <img src="images/icon.png" alt="icon" style="width:48px;height:48px;object-fit:contain;display:block;margin-right:12px;">
+        <div style="flex:1;min-width:0;">
+          <div style="color:#1F2937;font-size:17px;font-weight:500;line-height:1.5;">每一棵古树名木都是隐于京师的见证者</div>
+          <div style="color:#6B7280;font-size:14px;line-height:1.5;margin-top:0;">事往凭谁问，无恙是朱颜。</div>
+        </div>
+      </div>
+      <a href="#home" dropdown-link>
+        <img src="images/icon_01.png" alt="首页" style="width:24px;height:24px;object-fit:contain;display:block;">
+        <span>首 页</span>
+      </a>
+      <a href="#special" dropdown-link>
+        <img src="images/icon_02.png" alt="古树专题" style="width:24px;height:24px;object-fit:contain;display:block;">
+        <span>古树专题</span>
+      </a>
+      <a href="#tour" dropdown-link>
+        <img src="images/icon_03.png" alt="游览推荐" style="width:24px;height:24px;object-fit:contain;display:block;">
+        <span>游览推荐</span>
+      </a>
+      <a href="#wallpaper" dropdown-link>
+        <img src="images/icon_04.png" alt="精美壁纸" style="width:24px;height:24px;object-fit:contain;display:block;">
+        <span>精美壁纸</span>
+      </a>
+      <a href="#protect" dropdown-link>
+        <img src="images/icon_05.png" alt="古树保护" style="width:24px;height:24px;object-fit:contain;display:block;">
+        <span>古树保护</span>
+      </a>
+      <a href="#collect" dropdown-link>
+        <img src="images/icon_06.png" alt="古树收藏" style="width:24px;height:24px;object-fit:contain;display:block;">
+        <span>古树收藏</span>
+      </a>
+      <a href="#donate" dropdown-link>
+        <img src="images/icon_07.png" alt="认养募捐" style="width:24px;height:24px;object-fit:contain;display:block;">
+        <span>认养募捐</span>
+      </a>
+    </nav>
   </header>
-  <div class="container">
+  <div class="container" style="padding-top:56px;">
     <main>
       <!-- 首页内容区块 -->
       <div class="card" style="background:#EAF2E9;border-radius:12px;position:relative;">
@@ -161,6 +234,11 @@
     </main>
     <footer style="text-align:center;color:#9CA3AF;font-size:10px;padding:16px 0;">© 2025 版权所有 - ICP备案号：京ICP备XXXXXXXX号</footer>
   </div>
+  <audio id="bgm" src="sound/千年古树下.mp3" loop autoplay style="display:none;"></audio>
+  <div id="music-control" style="position:fixed;right:20px;bottom:28px;z-index:12000;width:48px;height:48px;background:rgba(255,255,255,0.92);box-shadow:0 2px 8px rgba(0,0,0,0.10);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;">
+    <svg id="pause-icon" width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="6" y="6" width="4" height="16" rx="2" fill="#2BAE17"/><rect x="18" y="6" width="4" height="16" rx="2" fill="#2BAE17"/></svg>
+    <svg id="play-icon" width="28" height="28" viewBox="0 0 28 28" fill="none" style="display:none;"><polygon points="8,6 22,14 8,22" fill="#2BAE17"/></svg>
+  </div>
   <script>
     document.getElementById('expand-btn').onclick = function() {
       var introText = document.getElementById('intro-text');
@@ -175,6 +253,99 @@
         introText.scrollIntoView({behavior:'smooth',block:'end'});
       }, 400);
     };
+    // 汉堡菜单交互
+    const menuBtn = document.getElementById('menu-btn');
+    const menuMask = document.getElementById('menu-mask');
+    const dropdownMenu = document.getElementById('dropdown-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const bars = menuIcon.querySelectorAll('.bar');
+    let menuOpen = false;
+    function openMenu() {
+      dropdownMenu.classList.add('active');
+      menuMask.style.display = 'block';
+      document.body.style.overflow = 'hidden';
+      // 汉堡变叉（更清晰）
+      bars[0].style.transform = 'translateY(14px) rotate(45deg)';
+      bars[0].style.setProperty('background-color', '#2BAE17', 'important');
+      bars[0].style.height = '6px';
+      bars[0].style.boxShadow = '0 2px 8px rgba(43,174,23,0.18)';
+      bars[1].style.opacity = '0';
+      bars[2].style.transform = 'translateY(-14px) rotate(-45deg)';
+      bars[2].style.setProperty('background-color', '#2BAE17', 'important');
+      bars[2].style.height = '6px';
+      bars[2].style.boxShadow = '0 2px 8px rgba(43,174,23,0.18)';
+      menuOpen = true;
+    }
+    function closeMenu() {
+      dropdownMenu.classList.remove('active');
+      menuMask.style.display = 'none';
+      document.body.style.overflow = '';
+      // 叉变汉堡
+      bars[0].style.transform = '';
+      bars[0].style.setProperty('background-color', '#fff', 'important');
+      bars[0].style.height = '4px';
+      bars[0].style.boxShadow = '0 1px 4px rgba(0,0,0,0.12)';
+      bars[1].style.opacity = '1';
+      bars[2].style.transform = '';
+      bars[2].style.setProperty('background-color', '#fff', 'important');
+      bars[2].style.height = '4px';
+      bars[2].style.boxShadow = '0 1px 4px rgba(0,0,0,0.12)';
+      menuOpen = false;
+    }
+    menuBtn.onclick = function(e) {
+      e.stopPropagation();
+      if (!menuOpen) {
+        openMenu();
+      } else {
+        closeMenu();
+      }
+    };
+    menuMask.onclick = function(e) { e.stopPropagation(); closeMenu(); };
+    dropdownMenu.onclick = function(e) { e.stopPropagation(); };
+    document.body.addEventListener('click', function() {
+      if (menuOpen) closeMenu();
+    });
+    // 音乐控制
+    const bgm = document.getElementById('bgm');
+    const musicControl = document.getElementById('music-control');
+    const pauseIcon = document.getElementById('pause-icon');
+    const playIcon = document.getElementById('play-icon');
+    let isPlaying = true;
+    // 兼容自动播放策略
+    function tryPlay() {
+      bgm.muted = false;
+      bgm.play().catch(()=>{});
+    }
+    window.addEventListener('load', tryPlay);
+    document.addEventListener('DOMContentLoaded', tryPlay);
+    document.body.addEventListener('pointerdown', tryPlay, { once: true });
+    document.body.addEventListener('touchstart', tryPlay, { once: true });
+    document.body.addEventListener('click', tryPlay, { once: true });
+    musicControl.onclick = function(e) {
+      e.stopPropagation();
+      if (isPlaying) {
+        bgm.pause();
+        pauseIcon.style.display = 'none';
+        playIcon.style.display = '';
+        isPlaying = false;
+      } else {
+        bgm.play();
+        pauseIcon.style.display = '';
+        playIcon.style.display = 'none';
+        isPlaying = true;
+      }
+    };
+    // 若音乐被用户/系统暂停，自动切换图标
+    bgm.addEventListener('pause', ()=>{
+      pauseIcon.style.display = 'none';
+      playIcon.style.display = '';
+      isPlaying = false;
+    });
+    bgm.addEventListener('play', ()=>{
+      pauseIcon.style.display = '';
+      playIcon.style.display = 'none';
+      isPlaying = true;
+    });
   </script>
 </body>
 </html>
