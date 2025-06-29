@@ -2,9 +2,10 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
   <title>北京的十大树王</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/pinch-zoom-js@2.0.0/dist/pinch-zoom.umd.js"></script>
   <style>
     .container,
     .card,
@@ -28,13 +29,22 @@
       overflow-x: auto;
     }
     .image-slider {
-      max-width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       overflow-x: auto;
+      gap: 12px;
+      padding-bottom: 8px;
+      max-width: 100%;
+      white-space: nowrap;
     }
     .image-slider img {
+      display: block;
       max-width: 90vw;
       height: auto;
-      display: inline-block;
+      border-radius: 8px;
+      object-fit: cover;
+      cursor: pointer;
     }
     #img-modal-mask {
       display: none;
@@ -45,6 +55,7 @@
       background: rgba(0,0,0,0.7);
       align-items: center;
       justify-content: center;
+      flex-direction: column;
     }
     #img-modal-mask img {
       max-width: 90vw;
@@ -52,6 +63,13 @@
       border-radius: 12px;
       box-shadow: 0 4px 24px rgba(0,0,0,0.25);
       background: #fff;
+    }
+    pinch-zoom {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+      height: 100vh;
     }
   </style>
 </head>
@@ -134,7 +152,7 @@
               <p style="text-indent:2em;">省级公路松曹路原本紧邻九搂十八杈，修建的挡墙导致古树根系伸展不开，影响了古树生长。从2021年至2022年，相关部门采取松曹路东移16米、修建古柏公园等一系列保护措施，为九搂十八杈创造了良好的生长环境。</p>
               <p style="text-indent:2em;">侧柏生长缓慢，生长期长。侧柏为北京市两种市树之一，也是北京地区数量最多的古树，多达22570株，占全北京古树的55.7%。全国树龄5000年以上的古树一共有5株，全部为侧柏。</p>
               <p style="text-indent:2em;">北京地区著名的侧柏古树还有：中山公园辽柏、劳动人民文化宫神柏、密云范公柏、上方山柏树王等。</p>
-              <div class="image-slider" style="overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;margin-top:8px;">
+              <div class="image-slider">
                 <img src="images/miyun_01.jpg" alt="密云古树1" class="enlargeable-img" style="height:200px;width:auto;max-width:320px;display:inline-block;margin-right:12px;border-radius:8px;vertical-align:middle;object-fit:cover;cursor:pointer;">
                 <img src="images/miyun_02.jpg" alt="密云古树2" class="enlargeable-img" style="height:200px;width:auto;max-width:320px;display:inline-block;border-radius:8px;vertical-align:middle;object-fit:cover;cursor:pointer;">
               </div>
@@ -185,7 +203,9 @@
 
   <!-- 图片放大遮罩 -->
   <div id="img-modal-mask" style="display:none;position:fixed;z-index:20000;left:0;top:0;width:100vw;height:100vh;background:rgba(0,0,0,0.7);align-items:center;justify-content:center;">
-    <img id="img-modal-large" src="" alt="放大图" style="max-width:90vw;max-height:90vh;border-radius:12px;box-shadow:0 4px 24px rgba(0,0,0,0.25);background:#fff;">
+    <pinch-zoom>
+      <img id="img-modal-large" src="" alt="放大图" style="max-width:100vw;max-height:100vh;border-radius:12px;box-shadow:0 4px 24px rgba(0,0,0,0.25);background:#fff;">
+    </pinch-zoom>
   </div>
   <script>
     document.getElementById('expand-btn').onclick = function() {
