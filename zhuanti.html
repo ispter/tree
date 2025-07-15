@@ -3,80 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-  <title>北京的十大树王</title>
+  <title>古树专题</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/pinch-zoom-js@2.0.0/dist/pinch-zoom.umd.js"></script>
-  <style>
-    .container,
-    .card,
-    .zhuanti-wide-card {
-      width: 100%;
-      max-width: 100vw;
-      box-sizing: border-box;
-    }
-    .tree-king-list,
-    .tree-king-ul,
-    .tree-king-item,
-    .tree-king-summary,
-    .tree-king-full {
-      width: 100%;
-      max-width: 100%;
-      box-sizing: border-box;
-      overflow-x: auto;
-    }
-    .tree-king-full {
-      word-break: break-all;
-      overflow-x: auto;
-    }
-    .image-slider {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow-x: auto;
-      gap: 12px;
-      padding-bottom: 8px;
-      max-width: 100%;
-      white-space: nowrap;
-    }
-    .image-slider:has(img:nth-child(2)) {
-      justify-content: flex-start;
-    }
-    .image-slider img {
-      display: block;
-      max-width: 90vw;
-      height: auto;
-      border-radius: 8px;
-      object-fit: cover;
-      cursor: pointer;
-    }
-    #img-modal-mask {
-      display: none;
-      position: fixed;
-      z-index: 20000;
-      left: 0; top: 0;
-      width: 100vw; height: 100vh;
-      background: rgba(0,0,0,0.7);
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-    }
-    #img-modal-mask img {
-      max-width: 90vw;
-      max-height: 90vh;
-      border-radius: 12px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.25);
-      background: #fff;
-    }
-    pinch-zoom {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100vw;
-      height: 100vh;
-    }
-  </style>
 </head>
-<body>
+<body style="padding-top:40px;">
   <header class="header-fixed">
     <div id="menu-btn" class="menu-btn-fixed">
         <div id="menu-icon" class="menu-icon">
@@ -85,7 +16,7 @@
         <span class="bar margin-top"></span>
       </div>
     </div>
-    北京的十大树王
+    古树专题
     <div id="menu-mask" class="menu-mask"></div>
     <nav id="dropdown-menu" class="fixed">
       <div style="display:flex;align-items:center;padding:16px 0 0 0;">
@@ -125,209 +56,137 @@
       </a>
     </nav>
   </header>
-  <div class="container" style="padding-top:56px;">
-    <main>
-      <div class="card card-bg zhuanti-wide-card">
-        <div id="intro-text" class="intro-text">
-          <p class="text-sub">
-            2018年，为弘扬和传承古树名木历史文化，增强公众生态文明意识，讲好北京古树名木的故事，让古树名木"活起来"，北京市园林绿化局开展了寻找北京"最美十大树王"活动，针对侧柏、油松、国槐、银杏、榆树、酸枣、白皮松、桧柏、海棠、玉兰10种北京市常见古树开展评选，每个树种推选出一株最美古树，作为"最美树王"。经过专家推选<span id="intro-ellipsis">……</span><span id="intro-rest" style="display:none;">、市民投票等环节，最终天坛公园九龙柏等10株古树从69株候选古树中脱颖而出，荣获北京"最美十大树王"称号。</span>
-          </p>
-        </div>
-        <div style="text-align:center;margin-top:8px;">
-          <button id="expand-btn" class="expand-btn">
-            展开全文
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <polyline points="4,6 8,10 12,6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-        </div>
+  <main style="background:#F9FAFB;min-height:100vh;padding:24px 0 0 0;display:flex;flex-direction:column;align-items:center;">
+    <!-- 专题卡片内容开始 -->
+    <section style="width:343px; background:linear-gradient(180deg, rgba(0,0,0,0.001) 0%, #fff 100%); box-shadow:0px 1px 2px 0px rgba(0,0,0,0.05); border-radius:12px; margin-bottom:20px;">
+      <div style="width:343px; height:192.94px; border-radius:12px 12px 0 0; overflow:hidden;">
+        <a href="zhuanti_01.html"><img src="images/zhuanti/zhuanti_01.jpg" alt="北京的十大树王" style="width:100%;height:100%;object-fit:cover;"></a>
       </div>
-      <!-- 十大树王缩略模块 -->
-      <div class="tree-king-list">
-        <ul class="tree-king-ul">
-          <li class="tree-king-item">
-            <div class="tree-king-summary" onclick="toggleTreeKing(this)"><b>1. 侧柏王：密云区新城子镇九搂十八杈</b><span class="tree-king-arrow-wrap"><svg class="tree-king-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><polyline points="4,6 8,10 12,6" stroke="#888" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-            <div class="tree-king-full">
-              <p style="text-indent:2em;"><b>编号：110128A00155</b></p>
-              <p style="text-indent:2em;">侧柏，柏科侧柏属常绿乔木，拉丁名：Platycladus orientalis (L.) Franco</p>
-              <p style="text-indent:2em;">树龄约3500年，是北京地区最老的古树。胸围780厘米，树高18米，冠幅15米。</p>
-              <p style="text-indent:2em;">因它的树干要好几个人伸臂合围才能抱拢，其巨冠由18个大杈组成，所以得名"九搂十八杈"。2023年还入选了全国"双百"古树。</p>
-              <p style="text-indent:2em;">省级公路松曹路原本紧邻九搂十八杈，修建的挡墙导致古树根系伸展不开，影响了古树生长。从2021年至2022年，相关部门采取松曹路东移16米、修建古柏公园等一系列保护措施，为九搂十八杈创造了良好的生长环境。</p>
-              <p style="text-indent:2em;">侧柏生长缓慢，生长期长。侧柏为北京市两种市树之一，也是北京地区数量最多的古树，多达22570株，占全北京古树的55.7%。全国树龄5000年以上的古树一共有5株，全部为侧柏。</p>
-              <p style="text-indent:2em;">北京地区著名的侧柏古树还有：中山公园辽柏、劳动人民文化宫神柏、密云范公柏、上方山柏树王等。</p>
-              <div class="image-slider">
-                <img src="images/miyun_01.jpg" alt="密云古树1" class="enlargeable-img" style="height:200px;width:auto;max-width:320px;display:inline-block;margin-right:12px;border-radius:8px;vertical-align:middle;object-fit:cover;cursor:pointer;">
-                <img src="images/miyun_02.jpg" alt="密云古树2" class="enlargeable-img" style="height:200px;width:auto;max-width:320px;display:inline-block;border-radius:8px;vertical-align:middle;object-fit:cover;cursor:pointer;">
-              </div>
-              <div style="text-align:center;color:#888;font-size:13px;margin:6px 0 0 0;">点击图片可放大</div>
-            </div>
-          </li>
-          <li class="tree-king-item">
-            <div class="tree-king-summary" onclick="toggleTreeKing(this)">2. 钟楼油松：位于钟楼西侧，<span class="tree-king-arrow-wrap"><svg class="tree-king-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><polyline points="4,6 8,10 12,6" stroke="#888" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-            <div class="tree-king-full">2. 钟楼油松：位于钟楼西侧，树龄约300年，树形挺拔，枝叶繁茂，是北京城区内罕见的古油松，被誉为"松中之王"。</div>
-          </li>
-          <li class="tree-king-item">
-            <div class="tree-king-summary" onclick="toggleTreeKing(this)">3. 北海国槐：北海公园内，<span class="tree-king-arrow-wrap"><svg class="tree-king-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><polyline points="4,6 8,10 12,6" stroke="#888" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-            <div class="tree-king-full">3. 北海国槐：北海公园内，树龄约300年，树干遒劲，枝叶茂盛，是北京古槐的代表，被誉为"槐中之王"。</div>
-          </li>
-          <li class="tree-king-item">
-            <div class="tree-king-summary" onclick="toggleTreeKing(this)">4. 钟鼓楼银杏：钟鼓楼附近<span class="tree-king-arrow-wrap"><svg class="tree-king-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><polyline points="4,6 8,10 12,6" stroke="#888" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-            <div class="tree-king-full">4. 钟鼓楼银杏：钟鼓楼附近，树龄约400年，秋季金黄，景色壮观，是北京著名的古银杏，被誉为"银杏之王"。</div>
-          </li>
-          <li class="tree-king-item">
-            <div class="tree-king-summary" onclick="toggleTreeKing(this)">5. 天坛榆树：天坛公园，<span class="tree-king-arrow-wrap"><svg class="tree-king-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><polyline points="4,6 8,10 12,6" stroke="#888" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-            <div class="tree-king-full">5. 天坛榆树：天坛公园，树龄约300年，树形优美，枝叶繁茂，是北京古榆树的代表，被誉为"榆中之王"。</div>
-          </li>
-          <li class="tree-king-item">
-            <div class="tree-king-summary" onclick="toggleTreeKing(this)">6. 香山白皮松：香山公园<span class="tree-king-arrow-wrap"><svg class="tree-king-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><polyline points="4,6 8,10 12,6" stroke="#888" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-            <div class="tree-king-full">6. 香山酸枣：香山公园，树龄约200年，果实鲜红，秋季观赏价值高，是北京古酸枣树的代表，被誉为"酸枣之王"。</div>
-          </li>
-          <li class="tree-king-item">
-            <div class="tree-king-summary" onclick="toggleTreeKing(this)">7. 香山白皮松：香山公园，树<span class="tree-king-arrow-wrap"><svg class="tree-king-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><polyline points="4,6 8,10 12,6" stroke="#888" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-            <div class="tree-king-full">7. 香山白皮松：香山公园，树龄约200年，树皮洁白，树形优美，是北京古白皮松的代表，被誉为"白皮松之王"。</div>
-          </li>
-          <li class="tree-king-item">
-            <div class="tree-king-summary" onclick="toggleTreeKing(this)">8. 香山桧柏：香山公园<span class="tree-king-arrow-wrap"><svg class="tree-king-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><polyline points="4,6 8,10 12,6" stroke="#888" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-            <div class="tree-king-full">8. 香山桧柏：香山公园，树龄约250年，枝叶苍翠，树形独特，是北京古桧柏的代表，被誉为"桧柏之王"。</div>
-          </li>
-          <li class="tree-king-item">
-            <div class="tree-king-summary" onclick="toggleTreeKing(this)">9. 香山海棠：香山<span class="tree-king-arrow-wrap"><svg class="tree-king-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><polyline points="4,6 8,10 12,6" stroke="#888" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-            <div class="tree-king-full">9. 香山海棠：香山公园，树龄约150年，春季花开如云，观赏价值极高，是北京古海棠的代表，被誉为"海棠之王"。</div>
-          </li>
-          <li class="tree-king-item">
-            <div class="tree-king-summary" onclick="toggleTreeKing(this)">10. 香山玉兰：香山<span class="tree-king-arrow-wrap"><svg class="tree-king-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none"><polyline points="4,6 8,10 12,6" stroke="#888" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-            <div class="tree-king-full">10. 香山玉兰：香山公园，树龄约120年，花色洁白，花期早，是北京古玉兰的代表，被誉为"玉兰之王"。</div>
-          </li>
-        </ul>
+      <div style="padding:16px;">
+        <h3 style="margin:0 0 10px 0; font-size:18px; font-family:Roboto, sans-serif; font-weight:500; color:#000; line-height:28px;">北京的十大树王</h3>
+        <p style="margin:0; color:#6B7280; font-size:14px; line-height:20px;"></p>
       </div>
-    </main>
-    <footer class="footer">© 2025 版权所有 - ICP备案号：京ICP备XXXXXXXX号</footer>
-  </div>
-
-  <!-- 图片放大遮罩 -->
-  <div id="img-modal-mask" style="display:none;position:fixed;z-index:20000;left:0;top:0;width:100vw;height:100vh;background:rgba(0,0,0,0.7);align-items:center;justify-content:center;">
-    <pinch-zoom>
-      <img id="img-modal-large" src="" alt="放大图" style="max-width:100vw;max-height:100vh;border-radius:12px;box-shadow:0 4px 24px rgba(0,0,0,0.25);background:#fff;">
-    </pinch-zoom>
-  </div>
+    </section>
+    <section style="width:343px; background:linear-gradient(180deg, rgba(0,0,0,0.001) 0%, #fff 100%); box-shadow:0px 1px 2px 0px rgba(0,0,0,0.05); border-radius:12px; margin-bottom:20px;">
+      <div style="width:343px; height:192.94px; border-radius:12px 12px 0 0; overflow:hidden;">
+        <a href="zhuanti_01.html"><img src="images/zhuanti/zhuanti_02.jpg" alt="北京最牛钉子树" style="width:100%;height:100%;object-fit:cover;"></a>
+      </div>
+      <div style="padding:16px;">
+        <h3 style="margin:0 0 10px 0; font-size:18px; font-family:Roboto, sans-serif; font-weight:500; color:#000; line-height:28px;">北京最牛钉子树</h3>
+        <p style="margin:0; color:#6B7280; font-size:14px; line-height:20px;"></p>
+      </div>
+    </section>
+    <section style="width:343px; background:linear-gradient(180deg, rgba(0,0,0,0.001) 0%, #fff 100%); box-shadow:0px 1px 2px 0px rgba(0,0,0,0.05); border-radius:12px; margin-bottom:20px;">
+      <div style="width:343px; height:192.94px; border-radius:12px 12px 0 0; overflow:hidden;">
+        <a href="zhuanti_01.html"><img src="images/zhuanti/zhuanti_03.jpg" alt="古树开花 最美人间芳华" style="width:100%;height:100%;object-fit:cover;"></a>
+      </div>
+      <div style="padding:16px;">
+        <h3 style="margin:0 0 10px 0; font-size:18px; font-family:Roboto, sans-serif; font-weight:500; color:#000; line-height:28px;">古树开花 最美人间芳华</h3>
+        <p style="margin:0; color:#6B7280; font-size:14px; line-height:20px;"></p>
+      </div>
+    </section>
+    <section style="width:343px; background:linear-gradient(180deg, rgba(0,0,0,0.001) 0%, #fff 100%); box-shadow:0px 1px 2px 0px rgba(0,0,0,0.05); border-radius:12px; margin-bottom:20px;">
+      <div style="width:343px; height:192.94px; border-radius:12px 12px 0 0; overflow:hidden;">
+        <a href="zhuanti_01.html"><img src="images/zhuanti/zhuanti_04.jpg" alt="唯有银杏不负秋" style="width:100%;height:100%;object-fit:cover;"></a>
+      </div>
+      <div style="padding:16px;">
+        <h3 style="margin:0 0 10px 0; font-size:18px; font-family:Roboto, sans-serif; font-weight:500; color:#000; line-height:28px;">唯有银杏不负秋</h3>
+        <p style="margin:0; color:#6B7280; font-size:14px; line-height:20px;"></p>
+      </div>
+    </section>
+    <section style="width:343px; background:linear-gradient(180deg, rgba(0,0,0,0.001) 0%, #fff 100%); box-shadow:0px 1px 2px 0px rgba(0,0,0,0.05); border-radius:12px; margin-bottom:20px;">
+      <div style="width:343px; height:192.94px; border-radius:12px 12px 0 0; overflow:hidden;">
+        <a href="zhuanti_01.html"><img src="images/zhuanti/zhuanti_05.jpg" alt="雪中古树展英姿" style="width:100%;height:100%;object-fit:cover;"></a>
+      </div>
+      <div style="padding:16px;">
+        <h3 style="margin:0 0 10px 0; font-size:18px; font-family:Roboto, sans-serif; font-weight:500; color:#000; line-height:28px;">雪中古树展英姿</h3>
+        <p style="margin:0; color:#6B7280; font-size:14px; line-height:20px;"></p>
+      </div>
+    </section>
+    <section style="width:343px; background:linear-gradient(180deg, rgba(0,0,0,0.001) 0%, #fff 100%); box-shadow:0px 1px 2px 0px rgba(0,0,0,0.05); border-radius:12px; margin-bottom:20px;">
+      <div style="width:343px; height:192.94px; border-radius:12px 12px 0 0; overflow:hidden;">
+        <a href="zhuanti_01.html"><img src="images/zhuanti/zhuanti_06.jpg" alt="古树的告白" style="width:100%;height:100%;object-fit:cover;"></a>
+      </div>
+      <div style="padding:16px;">
+        <h3 style="margin:0 0 10px 0; font-size:18px; font-family:Roboto, sans-serif; font-weight:500; color:#000; line-height:28px;">古树的告白</h3>
+        <p style="margin:0; color:#6B7280; font-size:14px; line-height:20px;"></p>
+      </div>
+    </section>
+    <section style="width:343px; background:linear-gradient(180deg, rgba(0,0,0,0.001) 0%, #fff 100%); box-shadow:0px 1px 2px 0px rgba(0,0,0,0.05); border-radius:12px; margin-bottom:20px;">
+      <div style="width:343px; height:192.94px; border-radius:12px 12px 0 0; overflow:hidden;">
+        <a href="zhuanti_01.html"><img src="images/zhuanti/zhuanti_07.jpg" alt="北京中轴线上的绿色守望者" style="width:100%;height:100%;object-fit:cover;"></a>
+      </div>
+      <div style="padding:16px;">
+        <h3 style="margin:0 0 10px 0; font-size:18px; font-family:Roboto, sans-serif; font-weight:500; color:#000; line-height:28px;">北京中轴线上的绿色守望者</h3>
+        <p style="margin:0; color:#6B7280; font-size:14px; line-height:20px;"></p>
+      </div>
+    </section>
+    <section style="width:343px; background:linear-gradient(180deg, rgba(0,0,0,0.001) 0%, #fff 100%); box-shadow:0px 1px 2px 0px rgba(0,0,0,0.05); border-radius:12px; margin-bottom:20px;">
+      <div style="width:343px; height:192.94px; border-radius:12px 12px 0 0; overflow:hidden;">
+        <a href="zhuanti_01.html"><img src="images/zhuanti/zhuanti_08.jpg" alt="古树中的“少数民族”" style="width:100%;height:100%;object-fit:cover;"></a>
+      </div>
+      <div style="padding:16px;">
+        <h3 style="margin:0 0 10px 0; font-size:18px; font-family:Roboto, sans-serif; font-weight:500; color:#000; line-height:28px;">古树中的“少数民族”</h3>
+        <p style="margin:0; color:#6B7280; font-size:14px; line-height:20px;"></p>
+      </div>
+    </section>
+    <section style="width:343px; background:linear-gradient(180deg, rgba(0,0,0,0.001) 0%, #fff 100%); box-shadow:0px 1px 2px 0px rgba(0,0,0,0.05); border-radius:12px; margin-bottom:20px;">
+      <div style="width:343px; height:192.94px; border-radius:12px 12px 0 0; overflow:hidden;">
+        <a href="zhuanti_01.html"><img src="images/zhuanti/zhuanti_09.jpg" alt="北京的龙松龙柏们" style="width:100%;height:100%;object-fit:cover;"></a>
+      </div>
+      <div style="padding:16px;">
+        <h3 style="margin:0 0 10px 0; font-size:18px; font-family:Roboto, sans-serif; font-weight:500; color:#000; line-height:28px;">北京的龙松龙柏们</h3>
+        <p style="margin:0; color:#6B7280; font-size:14px; line-height:20px;"></p>
+      </div>
+    </section>
+    <section style="width:343px; background:linear-gradient(180deg, rgba(0,0,0,0.001) 0%, #fff 100%); box-shadow:0px 1px 2px 0px rgba(0,0,0,0.05); border-radius:12px; margin-bottom:20px;">
+      <div style="width:343px; height:192.94px; border-radius:12px 12px 0 0; overflow:hidden;">
+        <a href="zhuanti_01.html"><img src="images/zhuanti/zhuanti_10.jpg" alt="古树上的寄生树" style="width:100%;height:100%;object-fit:cover;"></a>
+      </div>
+      <div style="padding:16px;">
+        <h3 style="margin:0 0 10px 0; font-size:18px; font-family:Roboto, sans-serif; font-weight:500; color:#000; line-height:28px;">古树上的寄生树</h3>
+        <p style="margin:0; color:#6B7280; font-size:14px; line-height:20px;"></p>
+      </div>
+    </section>
+    <section style="width:343px; background:linear-gradient(180deg, rgba(0,0,0,0.001) 0%, #fff 100%); box-shadow:0px 1px 2px 0px rgba(0,0,0,0.05); border-radius:12px; margin-bottom:20px;">
+      <div style="width:343px; height:192.94px; border-radius:12px 12px 0 0; overflow:hidden;">
+        <a href="zhuanti_01.html"><img src="images/zhuanti/zhuanti_11.jpg" alt="北京古树中的“王侯将相”们" style="width:100%;height:100%;object-fit:cover;"></a>
+      </div>
+      <div style="padding:16px;">
+        <h3 style="margin:0 0 10px 0; font-size:18px; font-family:Roboto, sans-serif; font-weight:500; color:#000; line-height:28px;">北京古树中的“王侯将相”们</h3>
+        <p style="margin:0; color:#6B7280; font-size:14px; line-height:20px;"></p>
+      </div>
+    </section>
+    <section style="width:343px; background:linear-gradient(180deg, rgba(0,0,0,0.001) 0%, #fff 100%); box-shadow:0px 1px 2px 0px rgba(0,0,0,0.05); border-radius:12px; margin-bottom:20px;">
+      <div style="width:343px; height:192.94px; border-radius:12px 12px 0 0; overflow:hidden;">
+        <a href="zhuanti_01.html"><img src="images/zhuanti/zhuanti_12.jpg" alt="古寺虽远，古树犹言" style="width:100%;height:100%;object-fit:cover;"></a>
+      </div>
+      <div style="padding:16px;">
+        <h3 style="margin:0 0 10px 0; font-size:18px; font-family:Roboto, sans-serif; font-weight:500; color:#000; line-height:28px;">古寺虽远，古树犹言</h3>
+        <p style="margin:0; color:#6B7280; font-size:14px; line-height:20px;"></p>
+      </div>
+    </section>
+    <section style="width:343px; background:linear-gradient(180deg, rgba(0,0,0,0.001) 0%, #fff 100%); box-shadow:0px 1px 2px 0px rgba(0,0,0,0.05); border-radius:12px; margin-bottom:20px;">
+      <div style="width:343px; height:192.94px; border-radius:12px 12px 0 0; overflow:hidden;">
+        <a href="zhuanti_01.html"><img src="images/zhuanti/zhuanti_13.jpg" alt="古树依古建，岁月谱华章" style="width:100%;height:100%;object-fit:cover;"></a>
+      </div>
+      <div style="padding:16px;">
+        <h3 style="margin:0 0 10px 0; font-size:18px; font-family:Roboto, sans-serif; font-weight:500; color:#000; line-height:28px;">古树依古建，岁月谱华章</h3>
+        <p style="margin:0; color:#6B7280; font-size:14px; line-height:20px;"></p>
+      </div>
+    </section>
+    <!-- 专题卡片内容结束 -->
+  </main>
   <script>
-    document.getElementById('expand-btn').onclick = function() {
-      document.getElementById('intro-ellipsis').style.display = 'none';
-      document.getElementById('intro-rest').style.display = 'inline';
+    document.getElementById('tiaoli-expand-btn').onclick = function() {
+      var content = document.getElementById('tiaoli-content');
       this.style.display = 'none';
+      content.style.maxHeight = '2000px';
     };
-    // 汉堡菜单交互
-    const menuBtn = document.getElementById('menu-btn');
-    const menuMask = document.getElementById('menu-mask');
-    const dropdownMenu = document.getElementById('dropdown-menu');
-    const menuIcon = document.getElementById('menu-icon');
-    const bars = menuIcon.querySelectorAll('.bar');
-    let menuOpen = false;
-    function openMenu() {
-      dropdownMenu.classList.add('active');
-      menuMask.style.display = 'block';
-      document.body.style.overflow = 'hidden';
-      bars[0].style.transform = 'translateY(14px) rotate(45deg)';
-      bars[0].style.setProperty('background-color', '#2BAE17', 'important');
-      bars[0].style.height = '6px';
-      bars[0].style.boxShadow = '0 2px 8px rgba(43,174,23,0.18)';
-      bars[1].style.opacity = '0';
-      bars[2].style.transform = 'translateY(-14px) rotate(-45deg)';
-      bars[2].style.setProperty('background-color', '#2BAE17', 'important');
-      bars[2].style.height = '6px';
-      bars[2].style.boxShadow = '0 2px 8px rgba(43,174,23,0.18)';
-      menuOpen = true;
-    }
-    function closeMenu() {
-      dropdownMenu.classList.remove('active');
-      menuMask.style.display = 'none';
-      document.body.style.overflow = '';
-      bars[0].style.transform = '';
-      bars[0].style.setProperty('background-color', '#fff', 'important');
-      bars[0].style.height = '4px';
-      bars[0].style.boxShadow = '0 1px 4px rgba(0,0,0,0.12)';
-      bars[1].style.opacity = '1';
-      bars[2].style.transform = '';
-      bars[2].style.setProperty('background-color', '#fff', 'important');
-      bars[2].style.height = '4px';
-      bars[2].style.boxShadow = '0 1px 4px rgba(0,0,0,0.12)';
-      menuOpen = false;
-    }
-    menuBtn.onclick = function(e) {
-      e.stopPropagation();
-      if (!menuOpen) {
-        openMenu();
-      } else {
-        closeMenu();
-      }
-    };
-    menuMask.onclick = function(e) { e.stopPropagation(); closeMenu(); };
-    dropdownMenu.onclick = function(e) { e.stopPropagation(); };
-    // 音乐控制
-    const bgm = document.getElementById('bgm');
-    if (bgm) {
-      const musicControl = document.getElementById('music-control');
-      const pauseIcon = document.getElementById('pause-icon');
-      const playIcon = document.getElementById('play-icon');
-      let isPlaying = true;
-      // 兼容自动播放策略
-      function tryPlay() {
-        bgm.muted = false;
-        bgm.play().catch(()=>{});
-      }
-      window.addEventListener('load', tryPlay);
-      document.addEventListener('DOMContentLoaded', tryPlay);
-      document.body.addEventListener('pointerdown', tryPlay, { once: true });
-      document.body.addEventListener('touchstart', tryPlay, { once: true });
-      document.body.addEventListener('click', tryPlay, { once: true });
-      musicControl.onclick = function(e) {
-        e.stopPropagation();
-        if (isPlaying) {
-          bgm.pause();
-          pauseIcon.style.display = 'none';
-          playIcon.style.display = '';
-          isPlaying = false;
-        } else {
-          bgm.play();
-          pauseIcon.style.display = '';
-          playIcon.style.display = 'none';
-          isPlaying = true;
-        }
-      };
-      // 若音乐被用户/系统暂停，自动切换图标
-      bgm.addEventListener('pause', ()=>{
-        pauseIcon.style.display = 'none';
-        playIcon.style.display = '';
-        isPlaying = false;
-      });
-      bgm.addEventListener('play', ()=>{
-        pauseIcon.style.display = '';
-        playIcon.style.display = 'none';
-        isPlaying = true;
-      });
-    }
-    function toggleTreeKing(el) {
-      var full = el.nextElementSibling;
-      if (full.style.display === 'block') {
-        full.style.display = 'none';
-        el.classList.remove('expanded');
-      } else {
-        full.style.display = 'block';
-        el.classList.add('expanded');
-      }
-    }
-    // 图片点击放大功能
-    document.querySelectorAll('.enlargeable-img').forEach(function(img) {
-      img.onclick = function(e) {
-        var modal = document.getElementById('img-modal-mask');
-        var modalImg = document.getElementById('img-modal-large');
-        modalImg.src = this.src;
-        modal.style.display = 'flex';
-      };
-    });
-    document.getElementById('img-modal-mask').onclick = function() {
+    document.getElementById('fuzhuang-expand-btn').onclick = function() {
+      var content = document.getElementById('fuzhuang-content');
       this.style.display = 'none';
-      document.getElementById('img-modal-large').src = '';
+      content.style.maxHeight = '2000px';
     };
   </script>
 </body>

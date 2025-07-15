@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <title>古树保护</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/pinch-zoom-js@2.0.0/dist/pinch-zoom.umd.js"></script>
+</head>
+<body style="padding-top:40px;">
+  <header class="header-fixed">
+    <div id="menu-btn" class="menu-btn-fixed">
+        <div id="menu-icon" class="menu-icon">
+        <span class="bar margin-bottom"></span>
+        <span class="bar"></span>
+        <span class="bar margin-top"></span>
+      </div>
+    </div>
+    古树保护
+    <div id="menu-mask" class="menu-mask"></div>
+    <nav id="dropdown-menu" class="fixed">
+      <div style="display:flex;align-items:center;padding:16px 0 0 0;">
+        <img src="images/icon.png" alt="icon" class="icon-img-40">
+        <div style="flex:1;min-width:0;">
+          <div style="color:#1F2937;font-size:15px;font-weight:500;line-height:1.5;">每一棵古树名木都是隐于京师的见证者</div>
+          <div style="color:#6B7280;font-size:14px;line-height:1.5;margin-top:0;">事往凭谁问，无恙是朱颜。</div>
+        </div>
+      </div>
+      <a href="#home" dropdown-link class="home-link">
+        <span class="icon-wrap"><img src="images/icon_01.png" alt="首页" style="width:24px;height:24px;object-fit:contain;display:block;"></span>
+        <span>首页</span>
+      </a>
+      <a href="#special" dropdown-link>
+        <span class="icon-wrap"><img src="images/icon_02.png" alt="古树专题" style="width:24px;height:24px;object-fit:contain;display:block;"></span>
+        <span>古树专题</span>
+      </a>
+      <a href="#tour" dropdown-link>
+        <span class="icon-wrap"><img src="images/icon_03.png" alt="游览推荐" style="width:24px;height:24px;object-fit:contain;display:block;"></span>
+        <span>游览推荐</span>
+      </a>
+      <a href="#wallpaper" dropdown-link>
+        <span class="icon-wrap"><img src="images/icon_04.png" alt="精美壁纸" style="width:24px;height:24px;object-fit:contain;display:block;"></span>
+        <span>精美壁纸</span>
+      </a>
+      <a href="#protect" dropdown-link>
+        <span class="icon-wrap"><img src="images/icon_05.png" alt="古树保护" style="width:24px;height:24px;object-fit:contain;display:block;"></span>
+        <span>古树保护</span>
+      </a>
+      <a href="#collect" dropdown-link>
+        <span class="icon-wrap"><img src="images/icon_06.png" alt="古树收藏" style="width:24px;height:24px;object-fit:contain;display:block;"></span>
+        <span>古树收藏</span>
+      </a>
+      <a href="#donate" dropdown-link>
+        <span class="icon-wrap"><img src="images/icon_07.png" alt="认养募捐" style="width:24px;height:24px;object-fit:contain;display:block;"></span>
+        <span>认养募捐</span>
+      </a>
+    </nav>
+  </header>
+  <main style="background:#F9FAFB;min-height:100vh;padding:24px 0 0 0;display:flex;flex-direction:column;align-items:center;">
+    <div style="background:#FFFFFF;border-radius:12px;box-shadow:0 1px 2px 0 rgba(0,0,0,0.05);width:90vw;max-width:375px;margin-bottom:24px;padding:24px;">
+      <h3 style="color:#2BAE17;font-family:Roboto;font-size:18px;font-weight:bold;text-align:center;line-height:28px;margin:0 0 16px 0;">古树名木保护条例</h3>
+      <div id="tiaoli-content" style="color:#4B5563;font-family:Roboto;font-size:14px;line-height:20px;max-height:200px;overflow:hidden;transition:max-height 0.3s;">
+        <p style="margin-bottom:1.2em;">第一条　为了加强对古树名木的保护，推进生态文明建设，传承中华优秀传统文化，制定本条例。</p>
+        <p style="margin-bottom:1.2em;">第二条　本条例所称古树，是指树龄100年以上的树木，不包括人工培育、以生产木材为主要目的的商品林中的树木。<br/>本条例所称名木，是指具有重要历史、文化、科学、景观价值或者具有重要纪念意义的树木。</p>
+        <p style="margin-bottom:1.2em;">第三条　国家保护古树名木，禁止损害古树名木及其生长环境。</p>
+        <p style="margin-bottom:1.2em;">第四条　古树名木保护管理工作坚持中国共产党的领导，坚持保护第一、合理利用、分级管理的原则，构建政府主导、属地负责、社会参与的工作机制。</p>
+        <p style="margin-bottom:1.2em;">第五条　全国绿化委员会负责组织领导全国古树名木保护管理工作。国务院林业主管部门、住房城乡建设主管部门（以下统称国务院古树名木主管部门）按照职责分工负责全国古树名木保护管理工作。国务院其他有关部门在各自职责范围内负责古树名木保护管理相关工作。<br/>县级以上地方人民政府应当加强对古树名木保护管理工作的组织领导。县级以上地方人民政府林业主管部门、城市绿化主管部门（以下统称县级以上地方人民政府古树名木主管部门）按照职责分工负责本行政区域内古树名木保护管理工作。县级以上地方人民政府其他有关部门在各自职责范围内负责古树名木保护管理相关工作。<br/>乡镇人民政府、街道办事处以及村民委员会、居民委员会应当协助做好古树名木保护管理相关工作。</p>
+        <p style="margin-bottom:1.2em;">第六条　县级以上人民政府开展古树名木保护管理工作所需经费，应当按照财政事权和支出责任划分原则列入本级预算。<br/>国家鼓励通过认捐、认养等多种形式资助古树名木保护事业。</p>
+        <p style="margin-bottom:1.2em;">第七条　国家鼓励、支持古树名木保护科学研究和先进技术推广应用，提高古树名木保护管理水平。<br/>国务院有关部门、县级以上地方人民政府及其有关部门应当采取多种形式，组织开展古树名木保护宣传教育，传承古树名木文化，增强全社会的古树名木保护意识，营造保护古树名木的良好社会氛围。</p>
+        <p style="margin-bottom:1.2em;">第八条　对古树按照下列标准实行分级保护：<br/>（一）树龄500年以上的，实行一级保护；<br/>（二）树龄300年以上不满500年的，实行二级保护；<br/>（三）树龄100年以上不满300年的，实行三级保护。<br/>省、自治区、直辖市人民政府根据实际情况，可以决定对城市内树龄300年以上不满500年的古树实行一级保护、树龄100年以上不满300年的古树实行二级保护。<br/>对名木均实行一级保护，不受树龄限制。</p>
+        <p style="margin-bottom:1.2em;">第九条　全国绿化委员会每10年组织开展一次全国古树名木资源普查。普查间隔期内，县级以上地方人民政府古树名木主管部门适时开展古树名木资源补充调查。在普查、补充调查以及古树名木认定等工作中，县级以上地方人民政府古树名木主管部门可以组织开展古树名木鉴定。<br/>国家鼓励单位、个人提供古树名木资源信息。</p>
+        <p style="margin-bottom:1.2em;">第十条　县级以上地方人民政府古树名木主管部门根据古树名木资源普查、补充调查结果认定古树名木，报本级人民政府批准后依法公布。<br/>实行一级保护的古树和名木由省、自治区、直辖市人民政府古树名木主管部门认定，实行二级保护、三级保护的古树分别由设区的市级、县级人民政府古树名木主管部门认定。<br/>对在一定区域内集中生长形成的古树群体，可以实行整体保护，并按照涉及古树名木的最高保护等级，由相应的地方人民政府古树名木主管部门认定为古树群，报本级人民政府批准后依法公布。<br/>古树名木的认定和公布实行动态管理。<br/>古树名木认定和分级保护管理的具体办法由国务院古树名木主管部门规定。</p>
+        <p style="margin-bottom:1.2em;">第十一条　县级以上地方人民政府古树名木主管部门应当建立古树名木档案，并按照有关规范和要求，对古树名木设立保护标志，建设相应的保护设施，采取相应的保护措施。<br/>县级人民政府应当按照国务院古树名木主管部门的规定，划定古树名木保护范围，并依法公布。<br/>古树名木保护范围划定后，应当及时纳入国土空间规划实施监督信息系统。<br/>因生态保护等公共利益需要，造成古树名木相关权利人合法权益受到损害的，县级以上地方人民政府应当依法给予补偿；涉及属于集体所有、私人所有的古树名木的，县级以上地方人民政府可以采取措施合理照顾有关单位、个人的利益。</p>
+        <p style="margin-bottom:1.2em;">第十二条　县级人民政府古树名木主管部门应当按照有利于加强古树名木日常养护的原则，明确有关单位、个人作为古树名木的日常养护责任人，与日常养护责任人签订日常养护协议，根据古树名木权属情况、保护等级、养护状况、养护费用等，明确双方权利义务。<br/>对在古树名木保护管理工作中作出突出贡献的单位、个人，按照国家有关规定给予表彰和奖励。</p>
+        <p style="margin-bottom:1.2em;">第十三条　县级人民政府古树名木主管部门应当加强对日常养护责任人的技术指导和培训，提高日常养护责任人的科学养护能力。日常养护责任人应当严格履行养护义务，对损害古树名木及其生长环境的行为应当予以制止。<br/>日常养护责任人发现古树名木遭受损害或者出现生长异常等情形的，应当及时报告县级人民政府古树名木主管部门，县级人民政府古树名木主管部门应当及时组织现场调查，并对所涉古树名木采取救治、复壮等措施。</p>
+        <p style="margin-bottom:1.2em;">第十四条　禁止采伐古树名木。<br/>因重大植物疫情防控、抢险救灾等特殊紧急情形，依法采取应急处置措施采伐古树名木的，县级人民政府有关部门应当及时通知县级人民政府古树名木主管部门。县级人民政府古树名木主管部门应当在应急处置工作结束后30日内将有关情况逐级报告至省、自治区、直辖市人民政府古树名木主管部门。涉及实行一级保护的古树和名木的，省、自治区、直辖市人民政府古树名木主管部门应当报告国务院古树名木主管部门。</p>
+        <p style="margin-bottom:1.2em;">第十五条　古树名木原则上实行原地保护，不得移植。有下列情形之一，确需移植古树名木的，建设单位应当提出移植申请并提交相应的移植和养护方案，按照涉及古树名木的最高保护等级，经认定该古树名木的县级以上地方人民政府古树名木主管部门审核并报本级人民政府批准：<br/>（一）国家能源、交通、水利、军事设施等重点建设项目选址确实无法避让古树名木；<br/>（二）省、自治区、直辖市能源、交通、水利等重点建设项目选址确实无法避让实行二级保护、三级保护的古树；<br/>（三）其他基础设施建设项目选址确实无法避让实行三级保护的古树。<br/>古树名木的生长状况可能危害公众生命安全，采取修剪、支撑等防护措施仍无法消除安全隐患的，由县级人民政府古树名木主管部门提出相应的移植和养护方案，按照管理权限报有关人民政府批准。</p>
+        <p style="margin-bottom:1.2em;">第十六条　移植古树名木应当就近实施。<br/>古树名木移植，属于本条例第十五条第一款规定情形的，移植费用和移植后5年内的养护费用由建设单位承担；属于本条例第十五条第二款规定情形的，移植费用和移植后5年内的养护费用由有关县级人民政府承担。</p>
+        <p style="margin-bottom:1.2em;">第十七条　任何单位、个人不得实施下列损害古树名木及其生长环境的行为：<br/>（一）买卖、运输、加工非法采伐、移植的古树名木；<br/>（二）挖根、剥损树皮、过度修剪枝干；<br/>（三）向古树名木灌注有毒有害物质；<br/>（四）在古树名木保护范围内铺设非通透性硬化地面、使用明火、堆放重物、倾倒易燃易爆物品或者有毒有害物质；<br/>（五）在古树名木上刻划、架设线缆、缠绕或者悬挂物体等，攀爬古树名木；<br/>（六）破坏古树名木保护设施、保护标志；<br/>（七）其他损害古树名木及其生长环境的行为。</p>
+        <p style="margin-bottom:1.2em;">第十八条　建设项目选址、建设，应当避开古树名木保护范围；因特殊情况不能避开，确需在古树名木保护范围内新建、扩建建筑物、构筑物或者铺设管线的，应当在施工前报告县级以上地方人民政府古树名木主管部门，并按照要求采取必要的工程措施，尽可能减轻对古树名木及其生长环境的损害。<br/>古树名木保护范围内已有的建筑物、构筑物、管线等，不符合古树名木保护要求的，县级人民政府应当有计划地组织治理。<br/>古树名木保护与文物保护相关时，由县级以上地方人民政府古树名木主管部门和文物主管部门共同制定保护措施。</p>
+        <p style="margin-bottom:1.2em;">第十九条　在不损害古树名木及其生长环境的前提下，可以开展下列活动：<br/>（一）合理利用古树名木资源开展保护技术、遗传育种、生物学等科学研究，推广应用科研成果；<br/>（二）结合历史文化名镇名村、历史文化街区、传统村落以及传统节庆、民俗，挖掘古树名木的历史和文化价值；<br/>（三）开展科普宣教，促进古树名木资源与生态旅游融合发展；<br/>（四）古树名木属于传统经济树种的，相关权利人依法开展必要的生产经营活动。</p>
+        <p style="margin-bottom:1.2em;">第二十条　古树名木死亡的，由认定该古树名木的县级以上地方人民政府古树名木主管部门组织确认、查明原因并提出处置意见报本级人民政府；具有原地保留价值的，予以保留，并根据实际情况采取必要的保护措施。</p>
+        <p style="margin-bottom:1.2em;">第二十一条　县级以上地方人民政府古树名木主管部门应当建立古树名木分级保护巡查制度，根据古树名木的保护等级、分布地域、长势情况等确定巡查周期，定期开展巡查。<br/>对位于偏远地区和交通不便地区的古树名木，县级以上人民政府古树名木主管部门可以利用大数据、卫星遥感、无人机等技术手段开展动态监控。<br/>国家鼓励单位、个人举报、制止损害古树名木及其生长环境的行为。</p>
+        <p style="margin-bottom:1.2em;">第二十二条　国务院古树名木主管部门应当建立古树名木保护管理信息平台。<br/>县级以上地方人民政府古树名木主管部门应当及时将本行政区域内的古树名木数据信息归集至古树名木保护管理信息平台。</p>
+        <p style="margin-bottom:1.2em;">第二十三条　县级以上人民政府古树名木主管部门依照本条例规定，按照职责分工对古树名木保护管理等活动进行监督检查，有权采取下列措施：<br/>（一）询问被检查单位、个人，要求其对与监督检查事项有关的情况作出说明；<br/>（二）进行现场检查；<br/>（三）查阅、复制有关文件、资料，对可能被转移、销毁、隐匿或者篡改的文件、资料予以封存；<br/>（四）查封、扣押涉嫌违法活动的场所、设施或者财物。<br/>县级以上人民政府古树名木主管部门依法进行监督检查，有关单位、个人应当予以配合，不得拒绝、阻碍。</p>
+        <p style="margin-bottom:1.2em;">第二十四条　对古树名木保护管理工作不力、问题突出的地区，国务院古树名木主管部门可以约谈有关地方人民政府及其有关部门主要负责人，要求其采取措施及时整改。<br/>古树名木保护管理情况，应当纳入领导干部自然资源资产离任审计。</p>
+        <p style="margin-bottom:1.2em;">第二十五条　国务院古树名木主管部门、县级以上地方人民政府及其古树名木主管部门、其他有关部门的工作人员在古树名木保护管理工作中滥用职权、玩忽职守、徇私舞弊的，依法给予处分。</p>
+        <p style="margin-bottom:1.2em;">第二十六条　违反本条例规定，采伐、移植古树名木的，由县级以上地方人民政府古树名木主管部门责令停止违法行为、采取补救措施，没收违法所得，并依照下列规定处以罚款：<br/>（一）涉及实行一级保护的古树和名木的，处每株50万元以上100万元以下的罚款；<br/>（二）涉及实行二级保护的古树的，处每株20万元以上50万元以下的罚款；<br/>（三）涉及实行三级保护的古树的，处每株10万元以上20万元以下的罚款。<br/>违反本条例规定，损害古树名木及其生长环境，造成古树名木死亡的，依照前款规定处罚。</p>
+        <p style="margin-bottom:1.2em;">第二十七条　有本条例第十七条第一项、第二项、第三项、第四项规定行为之一的，由县级以上地方人民政府古树名木主管部门责令停止违法行为、采取补救措施，没收违法所得，并处1万元以上10万元以下的罚款；拒不停止违法行为、不采取补救措施或者造成严重后果的，并处5万元以上20万元以下的罚款。<br/>有本条例第十七条第五项、第六项、第七项规定行为之一的，由县级以上地方人民政府古树名木主管部门责令停止违法行为、采取补救措施，没收违法所得，可以并处1万元以下的罚款；拒不停止违法行为、不采取补救措施或者造成严重后果的，并处1万元以上10万元以下的罚款。</p>
+        <p style="margin-bottom:1.2em;">第二十八条　违反本条例第十八条第一款规定的，由县级以上地方人民政府古树名木主管部门责令停止违法行为、限期恢复原状或者采取其他补救措施，没收违法所得；拒不停止违法行为、逾期不恢复原状、不采取其他补救措施或者造成严重后果的，依照下列规定处以罚款：<br/>（一）涉及实行一级保护的古树和名木的，处每株20万元以上50万元以下的罚款；<br/>（二）涉及实行二级保护的古树的，处每株10万元以上20万元以下的罚款；<br/>（三）涉及实行三级保护的古树的，处每株5万元以上10万元以下的罚款。</p>
+        <p style="margin-bottom:1.2em;">第二十九条　违反本条例规定，给他人造成损失的，依法承担赔偿责任；构成违反治安管理行为的，依法给予治安管理处罚；构成犯罪的，依法追究刑事责任。</p>
+        <p style="margin-bottom:1.2em;">第三十条　本条例自2025年3月15日起施行。</p>
+      </div>
+      <div style="text-align:center;margin-top:8px;">
+        <button id="tiaoli-expand-btn" class="expand-btn" style="background:#fff;border:none;padding:6px 18px;border-radius:6px;cursor:pointer;font-size:14px;display:inline-flex;align-items:center;gap:4px;">
+          展开全文
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="4,6 8,10 12,6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div style="background:#FFFFFF;border-radius:12px;box-shadow:0 1px 2px 0 rgba(0,0,0,0.05);width:90vw;max-width:375px;padding:24px;">
+      <h3 style="color:#2BAE17;font-family:Roboto;font-size:18px;font-weight:bold;text-align:center;line-height:28px;margin:0 0 16px 0;">古树复壮与保护措施</h3>
+      <div id="fuzhuang-content" style="color:#4B5563;font-family:Roboto;font-size:14px;line-height:20px;max-height:200px;overflow:hidden;transition:max-height 0.3s;">
+        <p style='margin-bottom:1.2em;text-indent:2em;'>作为植物界的老寿星，经历成百上千年的岁月洗礼，古树出现长势衰弱、主干空腐等问题在所难免。对古树进行定期健康诊断，并根据结果及时采取针对性强的复壮措施，能够改善古树生长状态，有效维护古树健康。</p>
+        <p style='margin-bottom:1.2em;text-indent:2em;'>古树复壮的一般技术流程如下：<br/>古树健康评估→制定修复方案→专家论证→施工前准备→树体加固→洞壁修复→树洞修补→土壤改良。</p>
+        <p style='margin-bottom:1.2em;text-indent:2em;'>①树体加固<br/>　　当古树主干或大枝木质部出现空腐，或主干倾斜，或枝干重心过于远离主干，遇到大风天气，有倒伏或折断的风险，即需要对树体进行加固处理。树体加固包括硬支撑、软支撑、抱箍加固。有时也会针对古树情况制定复杂的综合树体加固措施。如北海公园遮荫侯，专家经过精心计算后，为其设计了复杂的综合抱箍结合伞状支撑的加固方案。</p>
+        <p style='margin-bottom:1.2em;text-indent:2em;'>②洞壁修复<br/>　　古树外皮、韧皮部及木质部遭受创伤后，受到雨水侵蚀引起真菌危害，使木质部不断腐朽，最终形成树洞。如不做处理，树洞腐朽加剧，树体逐渐“空心”，将严重威胁古树健康。因此，必须及时发现古树树洞损伤并对其进行清理创面、杀菌、杀虫、防腐处理。<br/>　　洞壁修复包括清理古树树洞内部腐朽物质、杀虫、杀菌、防腐等步骤。洞壁修复处理可防止古树树洞继续腐朽，达到延长古树寿命的目的。</p>
+        <p style='margin-bottom:1.2em;text-indent:2em;'>③树洞修补<br/>　　当树洞较大，严重影响古树景观风貌时，往往通过树洞修补技术措施进行保护。树洞修补一方面要求修补材料与树干连接紧密，不脱缝、不漏水，另一方面要求具有较高的仿真效果。目前常用的材料有树脂类材料、硅胶等。</p>
+        <p style='margin-bottom:1.2em;text-indent:2em;'>④土壤改良<br/>　　土壤是古树通过根系进行水分和营养物质传输的重要媒介，对古树生长起到至关重要的作用。土壤板结吸水率下降、酸碱度失调、氮磷钾等养分不足都有可能导致古树生长衰弱，因此应通过古树健康体检及时监测土壤质量、吸水率、理化指标等，必要时进行土壤改良。<br/>　　当古树周边地面铺装过大导致古树无法吸水时，可采用铺设透气砖、透气孔、木栈道和金属箅子等方式扩大古树根系吸水面积。为古树根系增加肥料可采取复壮沟、复壮穴、表层土壤改良等形式。</p>
+      </div>
+      <div style="text-align:center;margin-top:8px;">
+        <button id="fuzhuang-expand-btn" class="expand-btn" style="background:#fff;border:none;padding:6px 18px;border-radius:6px;cursor:pointer;font-size:14px;display:inline-flex;align-items:center;gap:4px;">
+          展开全文
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="4,6 8,10 12,6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </main>
+  <script>
+    document.getElementById('tiaoli-expand-btn').onclick = function() {
+      var content = document.getElementById('tiaoli-content');
+      this.style.display = 'none';
+      content.style.maxHeight = '2000px';
+    };
+    document.getElementById('fuzhuang-expand-btn').onclick = function() {
+      var content = document.getElementById('fuzhuang-content');
+      this.style.display = 'none';
+      content.style.maxHeight = '2000px';
+    };
+  </script>
+</body>
+</html>

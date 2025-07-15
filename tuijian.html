@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <title>故宫博物院</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/pinch-zoom-js@2.0.0/dist/pinch-zoom.umd.js"></script>
+</head>
+<body style="padding-top:40px;">
+  <header class="header-fixed">
+    <div id="menu-btn" class="menu-btn-fixed">
+        <div id="menu-icon" class="menu-icon">
+        <span class="bar margin-bottom"></span>
+        <span class="bar"></span>
+        <span class="bar margin-top"></span>
+      </div>
+    </div>
+    故宫博物院
+    <div id="menu-mask" class="menu-mask"></div>
+    <nav id="dropdown-menu" class="fixed">
+      <div style="display:flex;align-items:center;padding:16px 0 0 0;">
+        <img src="images/icon.png" alt="icon" class="icon-img-40">
+        <div style="flex:1;min-width:0;">
+          <div style="color:#1F2937;font-size:15px;font-weight:500;line-height:1.5;">每一棵古树名木都是隐于京师的见证者</div>
+          <div style="color:#6B7280;font-size:14px;line-height:1.5;margin-top:0;">事往凭谁问，无恙是朱颜。</div>
+        </div>
+      </div>
+      <a href="#home" dropdown-link class="home-link">
+        <span class="icon-wrap"><img src="images/icon_01.png" alt="首页" style="width:24px;height:24px;object-fit:contain;display:block;"></span>
+        <span>首页</span>
+      </a>
+      <a href="#special" dropdown-link>
+        <span class="icon-wrap"><img src="images/icon_02.png" alt="古树专题" style="width:24px;height:24px;object-fit:contain;display:block;"></span>
+        <span>古树专题</span>
+      </a>
+      <a href="#tour" dropdown-link>
+        <span class="icon-wrap"><img src="images/icon_03.png" alt="游览推荐" style="width:24px;height:24px;object-fit:contain;display:block;"></span>
+        <span>游览推荐</span>
+      </a>
+      <a href="#wallpaper" dropdown-link>
+        <span class="icon-wrap"><img src="images/icon_04.png" alt="精美壁纸" style="width:24px;height:24px;object-fit:contain;display:block;"></span>
+        <span>精美壁纸</span>
+      </a>
+      <a href="#protect" dropdown-link>
+        <span class="icon-wrap"><img src="images/icon_05.png" alt="古树保护" style="width:24px;height:24px;object-fit:contain;display:block;"></span>
+        <span>古树保护</span>
+      </a>
+      <a href="#collect" dropdown-link>
+        <span class="icon-wrap"><img src="images/icon_06.png" alt="古树收藏" style="width:24px;height:24px;object-fit:contain;display:block;"></span>
+        <span>古树收藏</span>
+      </a>
+      <a href="#donate" dropdown-link>
+        <span class="icon-wrap"><img src="images/icon_07.png" alt="认养募捐" style="width:24px;height:24px;object-fit:contain;display:block;"></span>
+        <span>认养募捐</span>
+      </a>
+    </nav>
+  </header>
+  <div class="banner" style="width:100%;height:220px;overflow:hidden;">
+    <img src="images/tuijian/tuijian_01.jpg" alt="故宫博物院头图"
+         style="width:100%;height:100%;display:block;object-fit:cover;object-position:center center;">
+  </div>
+  <main style="background:#F9FAFB;min-height:100vh;padding:0 0 24px 0;display:flex;flex-direction:column;align-items:center;">
+    <div style="width:100%;max-width:1000px;margin-top:32px;background:#fff;border-radius:12px;box-shadow:0 1px 2px 0 rgba(0,0,0,0.05);padding:24px 0 24px 0;">
+      <div style="color:#2BAE17;font-size:20px;font-family:Roboto,'PingFang SC','Microsoft YaHei',sans-serif;font-weight:600;text-align:center;line-height:28px;letter-spacing:1px;margin-bottom:8px;">
+        故宫博物院
+      </div>
+      <div style="color:#374151;font-size:14px;font-family:Roboto,'PingFang SC','Microsoft YaHei',sans-serif;font-weight:400;text-align:left;line-height:22.75px;padding:0 20px;margin-bottom:18px;white-space:pre-line;">
+        <span style="text-indent:2em;display:inline-block;width:100%;">故宫是中国明清两代的皇家宫殿，旧称紫禁城，位于北京中轴线的中心。故宫于明永乐四年（1406年）开始建设，到永乐十八年（1420年）建成，成为明清两朝二十四位皇帝的皇宫，是世界上现存规模最大、保存最为完整的木质结构古建筑群之一。</span>
+        <span style="text-indent:2em;display:inline-block;width:100%;">据说是出于防火、防雷、防盗并突出雄伟气势等多种原因考虑,除去御花园、慈宁宫花园、乾隆花园、建福宫花园外,其他建筑物密集之地，树木不算多。紫禁城区域内有古树名木448株，加上大高玄殿区域内的36株、慈慧胡同1株共计485株。其中，一级古树名木115株，二级古树名木370株。</span>
+      </div>
+      <div style="color:#374151;font-size:14px;font-family:Roboto,'PingFang SC','Microsoft YaHei',sans-serif;font-weight:bold;text-align:left;line-height:22.75px;padding:0 20px;margin-bottom:8px;white-space:pre-line;text-indent:2em;">
+        故宫蟠龙槐110101A01925
+      </div>
+      <div style="color:#374151;font-size:14px;font-family:Roboto,'PingFang SC','Microsoft YaHei',sans-serif;font-weight:400;text-align:left;line-height:22.75px;padding:0 20px 12px 20px;white-space:pre-line;text-indent:2em;">
+        龙爪槐/约400年<br>位于故宫御花园东南角<br>为北京龙爪槐之最，树冠东西长10.35 米，南北长 9.3米。<br>龙爪槐是国槐的芽变品种，需人工嫁接繁殖。
+      </div>
+      <style>
+        @media (max-width: 700px) {
+          .tuijian-img-row {
+            flex-direction: column !important;
+            gap: 12px !important;
+          }
+          .tuijian-img-row > div {
+            max-width: 310px !important;
+            min-width: 0 !important;
+            width: 100% !important;
+            margin: 0 auto 0 auto !important;
+          }
+        }
+      </style>
+      <div class="tuijian-img-row" style="display:flex;justify-content:center;gap:16px;width:100%;max-width:640px;margin:0 auto 0 auto;flex-wrap:wrap;">
+        <div style="flex:1;max-width:310px;min-width:180px;height:177px;border-radius:10px;overflow:hidden;">
+          <img src="https://image-resource.mastergo.com/161763590109552/161763590109555/df326b94c6b5095d0e6cf7779f6f5755.jpg" alt="故宫御花园蟠龙槐" style="width:100%;height:100%;object-fit:cover;border-radius:10px;"/>
+        </div>
+        <div style="flex:1;max-width:310px;min-width:180px;height:177px;border-radius:10px;overflow:hidden;">
+          <img src="https://image-resource.mastergo.com/161763590109552/161763590109555/3e75d19bdc716b9b669a8bdcdf4c0eb8.jpg" alt="故宫御花园蟠龙槐大图" style="width:100%;height:100%;object-fit:cover;border-radius:10px;"/>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

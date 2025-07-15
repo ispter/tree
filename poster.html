@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <title>精美壁纸</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/pinch-zoom-js@2.0.0/dist/pinch-zoom.umd.js"></script>
+  <style>
+    /* 设计稿主色、背景色、阴影等token变量 */
+    :root {
+      --main-green: #2BAE17; /* paint_1:96 */
+      --bg-light: #F9FAFB;   /* paint_1:21 */
+      --white: #fff;         /* paint_1:40 */
+      --shadow: 0px 1px 2px 0px rgba(0,0,0,0.05); /* effect_7:296 */
+      --button-bg: rgba(255,255,255,0.8); /* paint_7:367 */
+      --button-shadow: 0px 4px 6px -4px rgba(0,0,0,0.1), 0px 10px 15px -3px rgba(0,0,0,0.1); /* effect_7:553 */
+      --button-radius: 4px;
+      --card-radius: 12px;
+    }
+    body {
+      background: var(--bg-light);
+      margin: 0;
+      font-family: Roboto, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    }
+    .nav-bar {
+      width: 100%;
+      height: 52px;
+      background: var(--main-green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .nav-title {
+      color: var(--white);
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 28px;
+    }
+    .wallpaper-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 24px 12px 0 12px;
+      max-width: 375px;
+      margin: 0 auto;
+    }
+    .wallpaper-card {
+      width: 169.5px;
+      height: 226px;
+      background: var(--white);
+      border-radius: var(--card-radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .wallpaper-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .float-btn {
+      position: absolute;
+      right: 16px;
+      bottom: 16px;
+      width: 40px;
+      height: 40px;
+      background: var(--button-bg);
+      border-radius: var(--button-radius);
+      box-shadow: var(--button-shadow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+    }
+    .float-btn svg {
+      width: 18px;
+      height: 18px;
+      fill: #FF9D41;
+    }
+    @media (max-width: 375px) {
+      .wallpaper-card, .wallpaper-card img { width: 100vw; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header-fixed">
+    <div id="menu-btn" class="menu-btn-fixed">
+        <div id="menu-icon" class="menu-icon">
+        <span class="bar margin-bottom"></span>
+        <span class="bar"></span>
+        <span class="bar margin-top"></span>
+      </div>
+    </div>
+    精美壁纸
+    <div id="menu-mask" class="menu-mask"></div>
+    <nav id="dropdown-menu" class="fixed">
+      <div style="display:flex;align-items:center;padding:16px 0 0 0;">
+        <img src="images/icon.png" alt="icon" class="icon-img-40">
+        <div style="flex:1;min-width:0;">
+          <div style="color:#1F2937;font-size:15px;font-weight:500;line-height:1.5;">每一棵古树名木都是隐于京师的见证者</div>
+          <div style="color:#6B7280;font-size:14px;line-height:1.5;margin-top:0;">事往凭谁问，无恙是朱颜。</div>
+        </div>
+      </div>
+      <a href="#home" dropdown-link class="home-link">
+        <span class="icon-wrap"><img src="images/icon_01.png" alt="首页" style="width:24px;height:24px;object-fit:contain;display:block;"></span>
+        <span>首页</span>
+      </a>
+      <a href="#special" dropdown-link>
+        <span class="icon-wrap"><img src="images/icon_02.png" alt="古树专题" style="width:24px;height:24px;object-fit:contain;display:block;"></span>
+        <span>古树专题</span>
+      </a>
+      <a href="#tour" dropdown-link>
+        <span class="icon-wrap"><img src="images/icon_03.png" alt="游览推荐" style="width:24px;height:24px;object-fit:contain;display:block;"></span>
+        <span>游览推荐</span>
+      </a>
+      <a href="#wallpaper" dropdown-link>
+        <span class="icon-wrap"><img src="images/icon_04.png" alt="精美壁纸" style="width:24px;height:24px;object-fit:contain;display:block;"></span>
+        <span>精美壁纸</span>
+      </a>
+      <a href="#protect" dropdown-link>
+        <span class="icon-wrap"><img src="images/icon_05.png" alt="古树保护" style="width:24px;height:24px;object-fit:contain;display:block;"></span>
+        <span>古树保护</span>
+      </a>
+      <a href="#collect" dropdown-link>
+        <span class="icon-wrap"><img src="images/icon_06.png" alt="古树收藏" style="width:24px;height:24px;object-fit:contain;display:block;"></span>
+        <span>古树收藏</span>
+      </a>
+      <a href="#donate" dropdown-link>
+        <span class="icon-wrap"><img src="images/icon_07.png" alt="认养募捐" style="width:24px;height:24px;object-fit:contain;display:block;"></span>
+        <span>认养募捐</span>
+      </a>
+    </nav>
+  </header>
+  <div class="nav-bar">
+    <span class="nav-title">精美壁纸</span>
+  </div>
+  <div class="wallpaper-grid">
+    <!-- 自动生成40个壁纸卡片 -->
+    <script>
+      for (let i = 1; i <= 40; i++) {
+        const num = i.toString().padStart(2, '0');
+        document.write(`
+          <div class='wallpaper-card'>
+            <img src='images/poster/bizhi_${num}.jpg' alt='壁纸${i}'>
+            <div class='float-btn' title='下载' onclick='downloadImage(this)'>
+              <svg viewBox="0 0 18 18"><path d="M7.875 1.125Q7.875 0.632812 8.19141 0.316406Q8.50781 0 9 0Q9.49219 0 9.80859 0.316406Q10.125 0.632812 10.125 1.125L10.125 9.66797L12.6914 7.06641Q13.043 6.75 13.5 6.75Q13.957 6.75 14.3086 7.06641Q14.625 7.41797 14.625 7.875Q14.625 8.33203 14.3086 8.68359L9.80859 13.1836Q9.45703 13.5 9 13.5Q8.54297 13.5 8.19141 13.1836L3.69141 8.68359Q3.375 8.33203 3.375 7.875Q3.375 7.41797 3.69141 7.06641Q4.04297 6.75 4.5 6.75Q4.95703 6.75 5.30859 7.06641L7.875 9.66797L7.875 1.125ZM15.75 12.375Q16.6992 12.4102 17.332 13.043Q17.9648 13.6758 18 14.625L18 15.75Q17.9648 16.6992 17.332 17.332Q16.6992 17.9648 15.75 18L2.25 18Q1.30078 17.9648 0.667969 17.332Q0.0351562 16.6992 0 15.75L0 14.625Q0.0351562 13.6758 0.667969 13.043Q1.30078 12.4102 2.25 12.375L5.80078 12.375L7.41797 13.957Q8.12109 14.625 9 14.625Q9.91406 14.625 10.582 13.957L12.1641 12.375L15.75 12.375ZM2.8125 14.3438Q2.03906 14.4141 1.96875 15.1875Q2.03906 15.9609 2.8125 16.0312Q3.58594 15.9609 3.65625 15.1875Q3.58594 14.4141 2.8125 14.3438Z"/></svg>
+            </div>
+          </div>
+        `);
+      }
+    </script>
+  </div>
+  <script>
+    function downloadImage(btn) {
+      var card = btn.closest('.wallpaper-card');
+      var img = card.querySelector('img');
+      var url = img.src;
+      var filename = img.alt || 'wallpaper.jpg';
+      fetch(url, {mode: 'cors'})
+        .then(response => response.blob())
+        .then(blob => {
+          const blobUrl = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = blobUrl;
+          a.download = filename;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(blobUrl);
+        })
+        .catch(() => {
+          // fallback: 直接跳转（部分浏览器可能还是只能打开）
+          window.open(url, '_blank');
+        });
+    }
+  </script>
+</body>
+</html>
