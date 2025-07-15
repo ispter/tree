@@ -712,3 +712,40 @@ pinch-zoom {
 .photo-btn:hover {
   background: #249a13;
 }
+
+/* 新增：index.html 内联样式整理 */
+.menu-header-row {
+  display: flex;
+  align-items: center;
+  padding: 16px 0 0 0;
+}
+.menu-header-row .icon-img-40 {
+  margin-right: 12px;
+}
+.menu-header-row .menu-header-title {
+  color: #1F2937;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.menu-header-row .menu-header-desc {
+  color: #6B7280;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-top: 0;
+}
+.icon-wrap img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  display: block;
+}
+#main-frame {
+  width: 100vw;
+  height: calc(100vh - 56px);
+  border: none;
+  display: block;
+}
+#play-icon {
+  display: none;
+}

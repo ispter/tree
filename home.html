@@ -7,58 +7,6 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="header-fixed">
-    <div id="menu-btn" class="menu-btn-fixed">
-        <div id="menu-icon" class="menu-icon">
-        <span class="bar margin-bottom"></span>
-        <span class="bar"></span>
-        <span class="bar margin-top"></span>
-      </div>
-    </div>
-    古都古树古谭
-    <div id="menu-mask" class="menu-mask"></div>
-    <nav id="dropdown-menu" class="fixed">
-      <div style="display:flex;align-items:center;padding:16px 0 0 0;">
-        <img src="images/icon.png" alt="icon" class="icon-img-40">
-        <div style="flex:1;min-width:0;">
-          <div style="color:#1F2937;font-size:15px;font-weight:500;line-height:1.5;">每一棵古树名木都是隐于京师的见证者</div>
-          <div style="color:#6B7280;font-size:14px;line-height:1.5;margin-top:0;">事往凭谁问，无恙是朱颜。</div>
-        </div>
-      </div>
-      <a href="#home" dropdown-link class="home-link">
-        <span class="icon-wrap"><img src="images/icon_01.png" alt="首页" style="width:24px;height:24px;object-fit:contain;display:block;"></span>
-        <span>首页</span>
-      </a>
-      <a href="zhuanti.html" dropdown-link>
-        <span class="icon-wrap"><img src="images/icon_02.png" alt="古树专题" style="width:24px;height:24px;object-fit:contain;display:block;"></span>
-        <span>古树专题</span>
-      </a>
-      <a href="tuijian.html" dropdown-link>
-        <span class="icon-wrap"><img src="images/icon_03.png" alt="游览推荐" style="width:24px;height:24px;object-fit:contain;display:block;"></span>
-        <span>游览推荐</span>
-      </a>
-      <a href="poster.html" dropdown-link>
-        <span class="icon-wrap"><img src="images/icon_04.png" alt="精美壁纸" style="width:24px;height:24px;object-fit:contain;display:block;"></span>
-        <span>精美壁纸</span>
-      </a>
-      <a href="tiaoli.html" dropdown-link>
-        <span class="icon-wrap"><img src="images/icon_05.png" alt="古树保护" style="width:24px;height:24px;object-fit:contain;display:block;"></span>
-        <span>古树保护</span>
-      </a>
-      <a href="shoucang.html" dropdown-link>
-        <span class="icon-wrap"><img src="images/icon_06.png" alt="古树收藏" style="width:24px;height:24px;object-fit:contain;display:block;"></span>
-        <span>古树收藏</span>
-      </a>
-      <a href="#donate" dropdown-link>
-        <span class="icon-wrap"><img src="images/icon_07.png" alt="认养募捐" style="width:24px;height:24px;object-fit:contain;display:block;"></span>
-        <span>认养募捐</span>
-      </a>
-      <a href="banquan.html" dropdown-link>
-        <span class="icon-wrap"><img src="images/icon_08.png" alt="版权信息" style="width:24px;height:24px;object-fit:contain;display:block;"></span>
-        <span>版权信息</span>
-      </a>
-    </nav>
-  </header>
   <div class="container" style="padding-top:56px;">
     <main>
       <!-- 首页内容区块 -->
@@ -136,53 +84,6 @@
         introText.scrollIntoView({behavior:'smooth',block:'end'});
       }, 400);
     };
-    // 汉堡菜单交互
-    const menuBtn = document.getElementById('menu-btn');
-    const menuMask = document.getElementById('menu-mask');
-    const dropdownMenu = document.getElementById('dropdown-menu');
-    const menuIcon = document.getElementById('menu-icon');
-    const bars = menuIcon.querySelectorAll('.bar');
-    let menuOpen = false;
-    function openMenu() {
-      dropdownMenu.classList.add('active');
-      menuMask.style.display = 'block';
-      document.body.style.overflow = 'hidden';
-      bars[0].style.transform = 'translateY(14px) rotate(45deg)';
-      bars[0].style.setProperty('background-color', '#2BAE17', 'important');
-      bars[0].style.height = '6px';
-      bars[0].style.boxShadow = '0 2px 8px rgba(43,174,23,0.18)';
-      bars[1].style.opacity = '0';
-      bars[2].style.transform = 'translateY(-14px) rotate(-45deg)';
-      bars[2].style.setProperty('background-color', '#2BAE17', 'important');
-      bars[2].style.height = '6px';
-      bars[2].style.boxShadow = '0 2px 8px rgba(43,174,23,0.18)';
-      menuOpen = true;
-    }
-    function closeMenu() {
-      dropdownMenu.classList.remove('active');
-      menuMask.style.display = 'none';
-      document.body.style.overflow = '';
-      bars[0].style.transform = '';
-      bars[0].style.setProperty('background-color', '#fff', 'important');
-      bars[0].style.height = '4px';
-      bars[0].style.boxShadow = '0 1px 4px rgba(0,0,0,0.12)';
-      bars[1].style.opacity = '1';
-      bars[2].style.transform = '';
-      bars[2].style.setProperty('background-color', '#fff', 'important');
-      bars[2].style.height = '4px';
-      bars[2].style.boxShadow = '0 1px 4px rgba(0,0,0,0.12)';
-      menuOpen = false;
-    }
-    menuBtn.onclick = function(e) {
-      e.stopPropagation();
-      if (!menuOpen) {
-        openMenu();
-      } else {
-        closeMenu();
-      }
-    };
-    menuMask.onclick = function(e) { e.stopPropagation(); closeMenu(); };
-    dropdownMenu.onclick = function(e) { e.stopPropagation(); };
     // 音乐控制
     const bgm = document.getElementById('bgm');
     const musicControl = document.getElementById('music-control');

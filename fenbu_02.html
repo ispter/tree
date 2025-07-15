@@ -7,55 +7,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="header-fixed">
-    <div id="menu-btn" class="menu-btn-fixed">
-        <div id="menu-icon" class="menu-icon">
-        <span class="bar margin-bottom"></span>
-        <span class="bar"></span>
-        <span class="bar margin-top"></span>
-      </div>
-    </div>
-    太庙神柏
-    <div id="menu-mask" class="menu-mask"></div>
-    <nav id="dropdown-menu" class="fixed">
-      <div style="display:flex;align-items:center;padding:16px 0 0 0;">
-        <img src="images/icon.png" alt="icon" class="icon-img-40">
-        <div style="flex:1;min-width:0;">
-          <div style="color:#1F2937;font-size:15px;font-weight:500;line-height:1.5;">每一棵古树名木都是隐于京师的见证者</div>
-          <div style="color:#6B7280;font-size:14px;line-height:1.5;margin-top:0;">事往凭谁问，无恙是朱颜。</div>
-        </div>
-      </div>
-      <a href="#home" dropdown-link class="home-link">
-        <span class="icon-wrap"><img src="images/icon_01.png" alt="首页" style="width:24px;height:24px;object-fit:contain;display:block;"></span>
-        <span>首页</span>
-      </a>
-      <a href="#special" dropdown-link>
-        <span class="icon-wrap"><img src="images/icon_02.png" alt="古树专题" style="width:24px;height:24px;object-fit:contain;display:block;"></span>
-        <span>古树专题</span>
-      </a>
-      <a href="#tour" dropdown-link>
-        <span class="icon-wrap"><img src="images/icon_03.png" alt="游览推荐" style="width:24px;height:24px;object-fit:contain;display:block;"></span>
-        <span>游览推荐</span>
-      </a>
-      <a href="#wallpaper" dropdown-link>
-        <span class="icon-wrap"><img src="images/icon_04.png" alt="精美壁纸" style="width:24px;height:24px;object-fit:contain;display:block;"></span>
-        <span>精美壁纸</span>
-      </a>
-      <a href="#protect" dropdown-link>
-        <span class="icon-wrap"><img src="images/icon_05.png" alt="古树保护" style="width:24px;height:24px;object-fit:contain;display:block;"></span>
-        <span>古树保护</span>
-      </a>
-      <a href="#collect" dropdown-link>
-        <span class="icon-wrap"><img src="images/icon_06.png" alt="古树收藏" style="width:24px;height:24px;object-fit:contain;display:block;"></span>
-        <span>古树收藏</span>
-      </a>
-      <a href="#donate" dropdown-link>
-        <span class="icon-wrap"><img src="images/icon_07.png" alt="认养募捐" style="width:24px;height:24px;object-fit:contain;display:block;"></span>
-        <span>认养募捐</span>
-      </a>
-    </nav>
-  </header>
-  <main class="mg-main" style="max-width:375px;margin:0 auto;background:#F9FAFB;padding-bottom:32px;min-height:calc(100vh - 52px);">
+  <div class="container" style="padding-top:56px;">
     <section style="padding:24px 16px 0 16px;">
       <div id="carousel" style="margin-bottom:24px;position:relative;overflow:hidden;height:220px;">
         <img id="carousel-img" src="images/miyun_01.jpg" alt="太庙神柏" style="width:100%;height:100%;object-fit:cover;border-radius:12px;box-shadow:0 4px 24px rgba(0,0,0,0.12);background:#fff;transition:opacity 0.3s;">
@@ -88,63 +40,15 @@
         <h3 style="font-size:18px;font-family:Roboto,sans-serif;font-weight:500;color:#111827;line-height:28px;margin:0 0 8px 0;">古树故事</h3>
         <p style="font-size:14px;color:#374151;line-height:22.75px;margin:0;">　　相传为太庙始建时，明成祖朱棣手植的第一棵树。当初太庙遍植新柏，连种三次均未成活，一工匠献计换上沃土，并请朱棣首栽此树，果然成活，遂称为“神柏”。后代皇帝、亲贵祭祖至此须下轿、下马，以示尊重。</p>
       </div>
-      <button style="margin-top:32px;width:100%;height:52px;background:#2BAE17;border:none;border-radius:16px;color:#fff;font-size:14px;font-family:Roboto,sans-serif;font-weight:500;box-shadow:0 4px 6px -4px rgba(43,174,23,0.2),0 10px 15px -3px rgba(43,174,23,0.2);display:flex;align-items:center;justify-content:center;line-height:1;">
+      <button id="photo-btn" style="margin-top:32px;width:100%;height:52px;background:#2BAE17;border:none;border-radius:16px;color:#fff;font-size:14px;font-family:Roboto,sans-serif;font-weight:500;box-shadow:0 4px 6px -4px rgba(43,174,23,0.2),0 10px 15px -3px rgba(43,174,23,0.2);display:flex;align-items:center;justify-content:center;line-height:1;">
         <span style="display:inline-flex;align-items:center;justify-content:center;gap:8px;">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="transform:rotate(180deg);display:block;vertical-align:middle;margin-bottom:2px;"><path d="M5.82031 16.2109L5.42969 15L2.5 15Q1.44531 14.9609 0.742188 14.2578Q0.0390625 13.5547 0 12.5L0 2.5Q0.0390625 1.44531 0.742188 0.742188Q1.44531 0.0390625 2.5 0L17.5 0Q18.5547 0.0390625 19.2578 0.742188Q19.9609 1.44531 20 2.5L20 12.5Q19.9609 13.5547 19.2578 14.2578Q18.5547 14.9609 17.5 15L14.5703 15L14.1797 16.2109Q13.7109 17.4219 12.3828 17.5L7.61719 17.5Q6.28906 17.4219 5.82031 16.2109ZM10 11.25Q11.0156 11.25 11.875 10.7422Q12.7344 10.2344 13.2422 9.375Q13.75 8.47656 13.75 7.5Q13.75 6.52344 13.2422 5.625Q12.7344 4.76562 11.875 4.25781Q11.0156 3.75 10 3.75Q8.98438 3.75 8.125 4.25781Q7.26562 4.76562 6.75781 5.625Q6.25 6.52344 6.25 7.5Q6.25 8.47656 6.75781 9.375Q7.26562 10.2344 8.125 10.7422Q8.98438 11.25 10 11.25Z" fill="#fff"/></svg>
           <span>合影留念</span>
         </span>
       </button>
     </section>
-  </main>
+  </div>
   <script>
-    // 汉堡菜单交互
-    const menuBtn = document.getElementById('menu-btn');
-    const menuMask = document.getElementById('menu-mask');
-    const dropdownMenu = document.getElementById('dropdown-menu');
-    const menuIcon = document.getElementById('menu-icon');
-    const bars = menuIcon.querySelectorAll('.bar');
-    let menuOpen = false;
-    function openMenu() {
-      dropdownMenu.classList.add('active');
-      menuMask.style.display = 'block';
-      document.body.style.overflow = 'hidden';
-      bars[0].style.transform = 'translateY(14px) rotate(45deg)';
-      bars[0].style.setProperty('background-color', '#2BAE17', 'important');
-      bars[0].style.height = '6px';
-      bars[0].style.boxShadow = '0 2px 8px rgba(43,174,23,0.18)';
-      bars[1].style.opacity = '0';
-      bars[2].style.transform = 'translateY(-14px) rotate(-45deg)';
-      bars[2].style.setProperty('background-color', '#2BAE17', 'important');
-      bars[2].style.height = '6px';
-      bars[2].style.boxShadow = '0 2px 8px rgba(43,174,23,0.18)';
-      menuOpen = true;
-    }
-    function closeMenu() {
-      dropdownMenu.classList.remove('active');
-      menuMask.style.display = 'none';
-      document.body.style.overflow = '';
-      bars[0].style.transform = '';
-      bars[0].style.setProperty('background-color', '#fff', 'important');
-      bars[0].style.height = '4px';
-      bars[0].style.boxShadow = '0 1px 4px rgba(0,0,0,0.12)';
-      bars[1].style.opacity = '1';
-      bars[2].style.transform = '';
-      bars[2].style.setProperty('background-color', '#fff', 'important');
-      bars[2].style.height = '4px';
-      bars[2].style.boxShadow = '0 1px 4px rgba(0,0,0,0.12)';
-      menuOpen = false;
-    }
-    menuBtn.onclick = function(e) {
-      e.stopPropagation();
-      if (!menuOpen) {
-        openMenu();
-      } else {
-        closeMenu();
-      }
-    };
-    menuMask.onclick = function(e) { e.stopPropagation(); closeMenu(); };
-    dropdownMenu.onclick = function(e) { e.stopPropagation(); };
-
     // 轮播图功能
     (function() {
       const images = ['images/miyun_01.jpg', 'images/miyun_01.png'];
@@ -219,6 +123,15 @@
         favBtn.style.transform = 'scale(1.2)';
         setTimeout(()=>{ favBtn.style.transform = 'scale(1)'; }, 150);
       });
+    })();
+    // 合影留念按钮跳转
+    (function() {
+      const photoBtn = document.getElementById('photo-btn');
+      if (photoBtn) {
+        photoBtn.addEventListener('click', function() {
+          window.location.href = 'fenbu_03.html';
+        });
+      }
     })();
   </script>
 </body>
