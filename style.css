@@ -772,4 +772,78 @@ header {
   fill: #2BAE17
 }
 
+.fenbu-page .image-item {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 8px;
+  width: 100%;
+  /* 移除 height: 0; 和 padding-bottom: 100%; */
+}
+
+.fenbu-page .grid-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover; /* 可选，适合裁剪填充 */
+}
+
+.fenbu-page .img-caption {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  text-align: center;
+  padding: 8px 0;
+  font-size: 1em;
+  box-sizing: border-box;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.fenbu-page .image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 16px;
+}
+
+.fenbu-page .image-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  aspect-ratio: 1/1; /* 让图片区域为正方形，现代浏览器支持 */
+}
+
+.fenbu-page .grid-img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fenbu-page .img-caption {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.2);
+  color: #fff;
+  text-align: center;
+  padding: 8px 0;
+  font-size: 1em;
+  box-sizing: border-box;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  margin: 0;
+}
+
+.fenbu-page .img-caption {
+  margin: 0;
+}
+
 

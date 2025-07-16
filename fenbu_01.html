@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-  <title>昌平区古树</title>
+  <title>古树分布</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/pinch-zoom-js@2.0.0/dist/pinch-zoom.umd.js"></script>
 </head>
@@ -37,167 +37,75 @@
           </button>
         </div>
       </div>
-      <!-- 十大树王缩略模块 -->
-      <div class="image-grid">
-        <div class="image-item">
-          <img src="images/miyun_01.jpg" alt="太庙神柏" class="grid-img enlargeable-img" id="img-taimiao-shenbai" style="cursor:pointer;">
-          <div class="img-caption">太庙神柏</div>
+      <div class="card-fenbu">
+        <div class="image-grid">
+          <div class="image-item">
+            <img src="images/fenbu/dongcheng.png" alt="东城区" class="grid-img" style="cursor:pointer;" onclick="window.location.href='fenbu_01.html'">
+            <div class="img-caption">东城区</div>
+          </div>
+          <div class="image-item">
+            <img src="images/fenbu/xicheng.png" alt="西城区" class="grid-img">
+            <div class="img-caption">西城区</div>
+          </div>
+          <div class="image-item">
+            <img src="images/fenbu/chaoyang.png" alt="朝阳区" class="grid-img">
+            <div class="img-caption">朝阳区</div>
+          </div>
+          <div class="image-item">
+            <img src="images/fenbu/fengtai.png" alt="丰台区" class="grid-img">
+            <div class="img-caption">丰台区</div>
+          </div>
+          <div class="image-item">
+            <img src="images/fenbu/shijingshan.png" alt="石景山区" class="grid-img">
+            <div class="img-caption">石景山区</div>
+          </div>
+          <div class="image-item">
+            <img src="images/fenbu/haidian.png" alt="海淀区" class="grid-img">
+            <div class="img-caption">海淀区</div>
+          </div>
+          <div class="image-item">
+            <img src="images/fenbu/mentougou.png" alt="门头沟区" class="grid-img">
+            <div class="img-caption">门头沟区</div>
+          </div>
+          <div class="image-item">
+            <img src="images/fenbu/fangshan.png" alt="房山区" class="grid-img">
+            <div class="img-caption">房山区</div>
+          </div>
+          <div class="image-item">
+            <img src="images/fenbu/tongzhou.png" alt="通州区" class="grid-img">
+            <div class="img-caption">通州区</div>
+          </div>
+          <div class="image-item">
+            <img src="images/fenbu/shunyi.png" alt="顺义区" class="grid-img">
+            <div class="img-caption">顺义区</div>
+          </div>
+          <div class="image-item">
+            <img src="images/fenbu/changping.png" alt="昌平区" class="grid-img">
+            <div class="img-caption">昌平区</div>
+          </div>
+          <div class="image-item">
+            <img src="images/fenbu/daxing.png" alt="大兴区" class="grid-img">
+            <div class="img-caption">大兴区</div>
+          </div>
+          <div class="image-item">
+            <img src="images/fenbu/huairou.png" alt="怀柔区" class="grid-img">
+            <div class="img-caption">怀柔区</div>
+          </div>
+          <div class="image-item">
+            <img src="images/fenbu/pinggu.png" alt="平谷区" class="grid-img">
+            <div class="img-caption">平谷区</div>
+          </div>
+          <div class="image-item">
+            <img src="images/fenbu/miyun.png" alt="密云区" class="grid-img">
+            <div class="img-caption">密云区</div>
+          </div>
+          <div class="image-item">
+            <img src="images/fenbu/yanqing.png" alt="延庆区" class="grid-img">
+            <div class="img-caption">延庆区</div>
+          </div>
         </div>
-        <div class="image-item">
-          <img src="images/miyun_02.jpg" alt="太庙明成祖手植柏" class="grid-img enlargeable-img">
-          <div class="img-caption">太庙明成祖手植柏</div>
-        </div>
-        <div class="image-item">
-          <img src="images/miyun_01.png" alt="太庙鹿形柏" class="grid-img enlargeable-img">
-          <div class="img-caption">太庙鹿形柏</div>
-        </div>
-        <div class="image-item">
-          <img src="images/miyun_02.png" alt="太庙树上柏" class="grid-img enlargeable-img">
-          <div class="img-caption">太庙树上柏</div>
-        </div>
-        <!-- 可继续添加更多图片行 -->
       </div>
     </main>
-    <footer class="footer">© 2025 版权所有 - ICP备案号：京ICP备XXXXXXXX号</footer>
   </div>
-
-  <!-- 图片放大遮罩 -->
-  <div id="img-modal-mask" style="display:none;position:fixed;z-index:20000;left:0;top:0;width:100vw;height:100vh;background:rgba(0,0,0,0.7);align-items:center;justify-content:center;">
-    <pinch-zoom>
-      <img id="img-modal-large" src="" alt="放大图" style="max-width:100vw;max-height:100vh;border-radius:12px;box-shadow:0 4px 24px rgba(0,0,0,0.25);background:#fff;">
-    </pinch-zoom>
-  </div>
-  <script>
-    document.getElementById('expand-btn').onclick = function() {
-      document.getElementById('intro-ellipsis').style.display = 'none';
-      document.getElementById('intro-rest').style.display = 'block';
-      document.getElementById('intro-rest2').style.display = 'block';
-      this.style.display = 'none';
-    };
-    // 汉堡菜单交互
-    const menuBtn = document.getElementById('menu-btn');
-    const menuMask = document.getElementById('menu-mask');
-    const dropdownMenu = document.getElementById('dropdown-menu');
-    const menuIcon = document.getElementById('menu-icon');
-    const bars = menuIcon.querySelectorAll('.bar');
-    let menuOpen = false;
-    function openMenu() {
-      dropdownMenu.classList.add('active');
-      menuMask.style.display = 'block';
-      document.body.style.overflow = 'hidden';
-      bars[0].style.transform = 'translateY(14px) rotate(45deg)';
-      bars[0].style.setProperty('background-color', '#2BAE17', 'important');
-      bars[0].style.height = '6px';
-      bars[0].style.boxShadow = '0 2px 8px rgba(43,174,23,0.18)';
-      bars[1].style.opacity = '0';
-      bars[2].style.transform = 'translateY(-14px) rotate(-45deg)';
-      bars[2].style.setProperty('background-color', '#2BAE17', 'important');
-      bars[2].style.height = '6px';
-      bars[2].style.boxShadow = '0 2px 8px rgba(43,174,23,0.18)';
-      menuOpen = true;
-    }
-    function closeMenu() {
-      dropdownMenu.classList.remove('active');
-      menuMask.style.display = 'none';
-      document.body.style.overflow = '';
-      bars[0].style.transform = '';
-      bars[0].style.setProperty('background-color', '#fff', 'important');
-      bars[0].style.height = '4px';
-      bars[0].style.boxShadow = '0 1px 4px rgba(0,0,0,0.12)';
-      bars[1].style.opacity = '1';
-      bars[2].style.transform = '';
-      bars[2].style.setProperty('background-color', '#fff', 'important');
-      bars[2].style.height = '4px';
-      bars[2].style.boxShadow = '0 1px 4px rgba(0,0,0,0.12)';
-      menuOpen = false;
-    }
-    menuBtn.onclick = function(e) {
-      e.stopPropagation();
-      if (!menuOpen) {
-        openMenu();
-      } else {
-        closeMenu();
-      }
-    };
-    menuMask.onclick = function(e) { e.stopPropagation(); closeMenu(); };
-    dropdownMenu.onclick = function(e) { e.stopPropagation(); };
-    // 音乐控制
-    const bgm = document.getElementById('bgm');
-    if (bgm) {
-      const musicControl = document.getElementById('music-control');
-      const pauseIcon = document.getElementById('pause-icon');
-      const playIcon = document.getElementById('play-icon');
-      let isPlaying = true;
-      // 兼容自动播放策略
-      function tryPlay() {
-        bgm.muted = false;
-        bgm.play().catch(()=>{});
-      }
-      window.addEventListener('load', tryPlay);
-      document.addEventListener('DOMContentLoaded', tryPlay);
-      document.body.addEventListener('pointerdown', tryPlay, { once: true });
-      document.body.addEventListener('touchstart', tryPlay, { once: true });
-      document.body.addEventListener('click', tryPlay, { once: true });
-      musicControl.onclick = function(e) {
-        e.stopPropagation();
-        if (isPlaying) {
-          bgm.pause();
-          pauseIcon.style.display = 'none';
-          playIcon.style.display = '';
-          isPlaying = false;
-        } else {
-          bgm.play();
-          pauseIcon.style.display = '';
-          playIcon.style.display = 'none';
-          isPlaying = true;
-        }
-      };
-      // 若音乐被用户/系统暂停，自动切换图标
-      bgm.addEventListener('pause', ()=>{
-        pauseIcon.style.display = 'none';
-        playIcon.style.display = '';
-        isPlaying = false;
-      });
-      bgm.addEventListener('play', ()=>{
-        pauseIcon.style.display = '';
-        playIcon.style.display = 'none';
-        isPlaying = true;
-      });
-    }
-    function toggleTreeKing(el) {
-      var full = el.nextElementSibling;
-      if (full.style.display === 'block') {
-        full.style.display = 'none';
-        el.classList.remove('expanded');
-      } else {
-        full.style.display = 'block';
-        el.classList.add('expanded');
-      }
-    }
-    // 图片点击放大功能
-    document.querySelectorAll('.enlargeable-img').forEach(function(img) {
-      // 先移除所有图片的 onclick
-      img.onclick = null;
-      // 只为太庙神柏图片绑定跳转
-      if(img.id === 'img-taimiao-shenbai') {
-        img.onclick = function(e) {
-          e.stopPropagation();
-          window.location.href = 'fenbu_02.html';
-        };
-      } else {
-        // 其它图片恢复放大功能
-        img.onclick = function(e) {
-          var modal = document.getElementById('img-modal-mask');
-          var modalImg = document.getElementById('img-modal-large');
-          modalImg.src = this.src;
-          modal.style.display = 'flex';
-        };
-      }
-    });
-    document.getElementById('img-modal-mask').onclick = function() {
-      this.style.display = 'none';
-      document.getElementById('img-modal-large').src = '';
-    };
-  </script>
 </body>
 </html>
