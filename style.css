@@ -561,7 +561,7 @@ pinch-zoom {
   z-index: 1;
 }
 .image-item {
-  width:  200px;
+  width:  100%;
   max-width: 200px;
   display: flex;
   flex-direction: column;
