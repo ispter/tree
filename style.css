@@ -747,5 +747,8 @@ pinch-zoom {
   display: block;
 }
 #play-icon {
-  display: none;
+
+  fill: #2BAE17
 }
+
+
