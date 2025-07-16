@@ -50,6 +50,16 @@ main {
   box-shadow: var(--shadow);
   margin-bottom: 16px;
   padding: 16px;
+  justify-content: center; /* 水平居中内容 */
+}
+.card-fenbu {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 16px;
+  padding: 16px;
+  justify-content: center; /* 水平居中内容 */
+  display: flex;
 }
 .nav-bar {
   display: flex;
@@ -551,8 +561,8 @@ pinch-zoom {
   z-index: 1;
 }
 .image-item {
-  width: 100%;
-  max-width: 260px;
+  width:  200px;
+  max-width: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -740,14 +750,25 @@ pinch-zoom {
   object-fit: contain;
   display: block;
 }
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+header {
+  flex: 0 0 auto;
+}
 #main-frame {
-  width: 100vw;
-  height: calc(100vh - 56px);
+  flex: 1 1 auto;
+  width: 100%;
   border: none;
-  display: block;
 }
 #play-icon {
-
   fill: #2BAE17
 }
 
